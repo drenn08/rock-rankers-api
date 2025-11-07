@@ -1,0 +1,426 @@
+openapi: 3.1.0
+
+info:
+  title: Rock Rankers API
+  description: A REST API that aggregates and visualizes the rankings and scorings of rock bands, albums, and songs, and enables social interaction.
+  version: 1.0.0
+  contact:
+    name: Rock-Rankers Support
+    email: api-support@example.com
+
+servers:
+  - url: http://localhost:3000
+    description: Local server for testing. Often, this is the development server.
+
+paths:
+  /users:
+    get:
+      summary: Get all users
+      description: Returns a list of all users in the system. Supports pagination and sorting.
+      tags:
+        - Users
+      operationId: getAllUsers
+      parameters:
+        - $ref: '#/components/parameters/PaginationPageParam'
+        - $ref: '#/components/parameters/PaginationPerPageParam'
+        - $ref: '#/components/parameters/SortParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetAllUsers'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    post:
+      summary: Create a new user
+      tags:
+        - Users
+      operationId: postNewUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserInput'
+            examples:
+              newUser:
+                $ref: '#/components/examples/NewUser'
+      responses:
+        '201':
+          $ref: '#/components/responses/SuccessPostOneUser'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /users/{id}:
+    get:
+      summary: Get a user by ID
+      description: Returns a single user based on their unique `id`.
+      tags:
+        - Users
+      operationId: getOneUser
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetOneUser'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    patch:
+      summary: Update a user
+      description: Update one or more properties of an existing user. The API supports partial updates.
+      tags:
+        - Users
+      operationId: patchOneUser
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserPatch'
+            examples:
+              userPatch:
+                $ref: '#/components/examples/UserPatch'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessPatchOneUser'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      summary: Delete a user by ID
+      description: Removes the specified user.
+      tags:
+        - Users
+      operationId: deleteOneUser
+      parameters:
+        - $ref: '#/components/parameters/UserIdPathParam'
+      responses:
+        '204':
+          $ref: '#/components/responses/SuccessDeleteOneUser'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+ /bands:
+    get:
+      summary: Get all bands
+      description: Returns a list of all bands in the system. Supports pagination and sorting.
+      tags:
+        - Bands
+      operationId: getAllBands
+      parameters:
+        - $ref: '#/components/parameters/PaginationPageParam'
+        - $ref: '#/components/parameters/PaginationPerPageParam'
+        - $ref: '#/components/parameters/SortParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetAllBands'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    post:
+      summary: Create a new band
+      tags:
+        - Bands
+      operationId: postNewBand
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BandInput'
+            examples:
+              newUser:
+                $ref: '#/components/examples/NewBand'
+      responses:
+        '201':
+          $ref: '#/components/responses/SuccessPostOneBand'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /bands/{id}:
+    get:
+      summary: Get a band by ID
+      description: Returns a single band based on their unique `id`.
+      tags:
+        - Bands
+      operationId: getOneBand
+      parameters:
+        - $ref: '#/components/parameters/BandIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetOneBand'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    patch:
+      summary: Update a band
+      description: Update one or more properties of an existing band. The API supports partial updates.
+      tags:
+        - Bands
+      operationId: patchOneBand
+      parameters:
+        - $ref: '#/components/parameters/BandIdPathParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BandPatch'
+            examples:
+              userPatch:
+                $ref: '#/components/examples/BandPatch'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessPatchOneBand'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      summary: Delete a band by ID
+      description: Removes the specified band.
+      tags:
+        - Bands
+      operationId: deleteOneBand
+      parameters:
+        - $ref: '#/components/parameters/bandIdPathParam'
+      responses:
+        '204':
+          $ref: '#/components/responses/SuccessDeleteOneBand'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+/albums:
+    get:
+      summary: Get all albums
+      description: Returns a list of all albums in the system. Supports pagination and sorting.
+      tags:
+        - Users
+      operationId: getAllAlbums
+      parameters:
+        - $ref: '#/components/parameters/PaginationPageParam'
+        - $ref: '#/components/parameters/PaginationPerPageParam'
+        - $ref: '#/components/parameters/SortParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetAllAlbums'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    post:
+      summary: Create a new album
+      tags:
+        - Albums
+      operationId: postNewAlbum
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlbumInput'
+            examples:
+              newUser:
+                $ref: '#/components/examples/NewAlbum'
+      responses:
+        '201':
+          $ref: '#/components/responses/SuccessPostOneAlbum'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+  /albums/{id}:
+    get:
+      summary: Get an album by ID
+      description: Returns a single album based on their unique `id`.
+      tags:
+        - Albums
+      operationId: getOneAlbum
+      parameters:
+        - $ref: '#/components/parameters/AlbumIdPathParam'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessGetOneAlbum'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    patch:
+      summary: Update an album
+      description: Update one or more properties of an existing album. The API supports partial updates.
+      tags:
+        - Albums
+      operationId: patchOneAlbum
+      parameters:
+        - $ref: '#/components/parameters/AlbumIdPathParam'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AlbumPatch'
+            examples:
+              userPatch:
+                $ref: '#/components/examples/AlbumPatch'
+      responses:
+        '200':
+          $ref: '#/components/responses/SuccessPatchOneAlbum'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
+    delete:
+      summary: Delete an album by ID
+      description: Removes the specified album.
+      tags:
+        - Albums
+      operationId: deleteOneAlbum
+      parameters:
+        - $ref: '#/components/parameters/AlbumIdPathParam'
+      responses:
+        '204':
+          $ref: '#/components/responses/SuccessDeleteOneAlbum'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/ServerError'
+
