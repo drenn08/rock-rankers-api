@@ -1,3 +1,4 @@
+[
 {
   "users": [
     {
@@ -30,36 +31,36 @@
       "name": "The Beatles",
       "genre": "rock, pop, psychedelia",
       "years active": "1960-1970",
-      "origin": "Liverpool, England",
+      "origin": "Liverpool, England"
     },
     {
       "name": "Led Zeppelin",
       "genre": "rock, blues, folk, metal",
       "years active": "1968-1980",
-      "origin": "London, England",
+      "origin": "London, England"
     },
     {
      "name": "Radiohead",
       "genre": "rock, alternative, electronica",
       "years active": "1985-present",
-      "origin": "Abingdon, Oxfordshire, England",
+      "origin": "Abingdon, Oxfordshire, England"
     },
     {
      "name": "Rage Against the Machine",
       "genre": "rock, alternative, metal, rap, funk",
       "years active": "1991-2000; 2008-2011; 2019-2024",
-      "origin": "Los Angeles, California, USA",
+      "origin": "Los Angeles, California, USA"
     }
   ]
 },
- "albums": [
+ "albums",":", [
     {
       "name": "The Beatles",
       "album": "Rubber Soul",
       "release date": "1965",
       "album score": "987",
       "global album ranking": "1",
-      "band catalog album ranking": "1",
+      "band catalog album ranking": "1"
     },
     {
       "name": "Led Zeppelin",
@@ -67,7 +68,7 @@
       "release date": "1969",
       "album score": "961",
       "global album ranking": "2",
-      "band catalog album ranking": "1",
+      "band catalog album ranking": "1"
     },
     {
      "name": "Radiohead",
@@ -75,7 +76,7 @@
       "release date": "1997",
       "album score": "955",
       "global album ranking": "3",
-      "band catalog album ranking": "1",
+      "band catalog album ranking": "1"
     },
     {
      "name": "Rage Against the Machine",
@@ -83,7 +84,8 @@
       "release date": "1992",
       "album score": "879",
       "global album ranking": "4",
-      "band catalog album ranking": "1",
+      "band catalog album ranking": "1"
     }
   ]
-}
+
+]
