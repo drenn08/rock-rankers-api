@@ -1,0 +1,84 @@
+# Site settings
+title: Rock-Rankers API
+description: API documentation for the Rock-Rankers REST API
+baseurl: "/rock-rankers-api"
+url: https:///drenn08.github.io/rock-rankers-api
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+plugins:
+  - jekyll-remote-theme
+
+# Where your documentation files are located
+source: docs
+
+# Navigation
+nav_enabled: true
+nav_sort: case_insensitive
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Footer
+footer_content: "Copyright &copy; 2025 Rock-Rankers API. Documentation built with Jekyll and Just the Docs."
+
+# Color scheme
+color_scheme: nil
+
+# Google Analytics (optional - leave blank if not using)
+ga_tracking: 
+ga_tracking_anonymize_ip: true
+
+# - - - - - - - - - - - - - - - - 
+#
+#   The following describes the content of the front matter
+#     in the topics of this documentation. These properties
+#     determine the topic layout and the information architecture.
+#   For complete documentation of this theme, see https://just-the-docs.com/
+#
+#   THESE PROPERTIES AND VALUES ARE NOT A PART OF _config.yml
+#     THEY ARE HERE ONLY TO SERVE AS DOCUMENTATION.
+#
+#   layout: default
+#       Specifies the page layout to use for the topic.
+#       The default layout should work for most pages. 
+#       See also https://just-the-docs.com/docs/layout/layout/
+#
+#   nav_order: 2
+#       Specifies the order of the topic in its level of the TOC.
+#       This value is used to sort the menu items at the same menu level
+#         in the navigation, where 1 is the first entry, 2 is below 1, etc.
+#       See also https://just-the-docs.com/docs/navigation/main/order/
+#
+#   has_children: true
+#       Specifies if this topic has sub-topics. Value can be true or false.
+#       If the topic has sub-topics, the sub-topics must contain the parent
+#         property in their front matter and list the page name of the topic
+#         as the value.
+#       See also:
+#             https://just-the-docs.com/docs/navigation/main/levels/
+#             https://just-the-docs.com/docs/navigation/main/ancestry/
+#
+#   parent: user resource
+#       Specifies the topic's immediate parent in the navigation hierarchy.
+#       The value is the page title of the parent topic.
+#       If the parent's page title is ambiguous, you can add a grand_parent
+#        property to be more specific.
+#       See also:
+#             https://just-the-docs.com/docs/navigation/main/levels/
+#             https://just-the-docs.com/docs/navigation/main/ancestry/
+#
+#   has_toc: false
+#       Specifies whether to display the default ToC of child topics or not.
+#       A value of false suppresses the default ToC.    
+#       See also https://just-the-docs.com/docs/navigation/children/
+#
+#

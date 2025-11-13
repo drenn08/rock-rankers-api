@@ -1,4 +1,11 @@
-# Rock-rankers API
+---
+title: "Rock-Rankers API"
+layout: default
+nav_order: 1
+description: "Rock-rankers API documentation homepage"
+permalink: /
+---
+## Rock-rankers API
 
 **Where music meets metrics**
 
