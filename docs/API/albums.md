@@ -3,6 +3,7 @@ title: "Albums"
 layout: default
 nav_order: 2
 parent: "API Reference Docs"
+has_children: true
 permalink: /api-reference-docs/albums/
 has_toc: false
 description: "Information about the `albums` resource"
@@ -53,6 +54,13 @@ Sample `albums` resource
 | `global album ranking` | string | The album's ranking across all albums |
 | `band catalog album ranking` | string | The album's ranking within the band's catalog |
 | `id` | number | The album's unique record ID |
+
+## Supported operations
+
+* `GET`
+* [`POST: create a new album`](../API/post-album.md)
+* `PUT`
+* `PATCH`
 
 ## Related resources
 

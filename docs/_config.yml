@@ -2,7 +2,7 @@
 title: Rock-Rankers API
 description: API documentation for the Rock-Rankers REST API
 baseurl: "/rock-rankers-api"
-url: https:///drenn08.github.io/rock-rankers-api
+url: https://gillwrites.github.io/rock-rankers-api
 
 # Theme
 remote_theme: just-the-docs/just-the-docs
