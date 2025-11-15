@@ -35,7 +35,7 @@ Follow this tutorial to learn how to do a one-time setup of your rock-rankers en
 
 Learn how to perform common rock-rankers tasks:
 
-* [query the rock-rankers database](./Tutorials/query%20the%20rock-rankers%20database.md)
+* [`GET`: query the rock-rankers database](./Tutorials/query%20the%20rock-rankers%20database.md)
 * [add a new band](./Tutorials/add%20a%20new%20band.md)
 * [add a new abum](./Tutorials/add%20a%20new%20album.md)
 * [enroll a new user](./Tutorials/enroll%20a%20new%20user.md)
@@ -45,13 +45,19 @@ Learn how to perform common rock-rankers tasks:
 
 ### API reference docs
 
- View the resource and endpoints, in the rock-rankers [API reference docs](../api/).
+ **View rock-rankers resource and endpoints**
 
 * [bands](../docs/API/bands.md)
 * [albums](../docs/API/albums.md)
 * [users](../docs/API/users.md)
 
-View the rock-rankers repo and OpenAPI specification.
+**Edit the rock-rankers database**
+
+* [`POST`: Create new records](./API/POST-a-record.md)  
+* `PUT`: Update existing records  
+* `DELETE`: Remove records  
+  
+**View the rock-rankers repo and OpenAPI specification**
 
 * [rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
 * [View OpenAPI Specification](../api/rock-rankers-spec.yml)
@@ -60,6 +66,6 @@ View the rock-rankers repo and OpenAPI specification.
 
 Placeholder for a troubleshootig
 
-## Contact rock-rakers
+## Contact rock-rankers
 
 Placeholder for contact.

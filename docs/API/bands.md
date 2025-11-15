@@ -3,6 +3,7 @@ title: "Bands"
 layout: default
 nav_order: 1
 parent: "API Reference Docs"
+has_children: true
 permalink: /api-reference-docs/bands/
 has_toc: false
 description: "Information about the `bands` resource"
@@ -49,6 +50,13 @@ Sample `bands` resource
 | `years active` | string | The years the band was active |
 | `origin` | string | The band's place of origin |
 | `id` | number | The band's unique record ID |
+
+## Supported operations
+
+* `GET`
+* [`POST: create a new band`](../API/post-band.md)
+* `PUT`
+* `PATCH`
 
 ## Related resources
 

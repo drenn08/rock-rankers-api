@@ -3,6 +3,7 @@ title: "Users"
 layout: default
 nav_order: 3
 parent: "API Reference Docs"
+has_children: true
 permalink: /api-reference-docs/users/
 has_toc: false
 description: "Information about the `users` resource"
