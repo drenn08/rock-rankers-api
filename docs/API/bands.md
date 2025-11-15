@@ -1,5 +1,5 @@
 ---
-title: "Bands"
+title: "Bands Resource"
 layout: default
 nav_order: 1
 parent: "API Reference Docs"

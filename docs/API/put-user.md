@@ -1,12 +1,12 @@
 ---
-title: "POST: create a new user"
+title: "PUT: update a user"
 layout: default
-nav_order: 1
+nav_order: 2
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
-permalink: /api-reference-docs/users/post-user/
+permalink: /api-reference-docs/users/put-user/
 has_toc: false
-description: "Create a new user using the POST method"
+description: "Update an existing user using the PUT method"
 tags:
   - api
 categories:
@@ -15,28 +15,30 @@ version: "v1.0"
 last_updated: "2025-11-14"
 ---
 
-## `POST`: create a new user
+## `PUT`: update an existing user
 
-Use the /users endpoint to create a new `user` using the `POST` method.
+Use the /users endpoint to update an existing `user` using the `PUT` method.
 
-### `POST` user `URL`
+## URL
 
 ```shell
 
-{server_url}/users
+{server_url}/users?id={id}
 ```
 
-### `POST` user query parameters
+## Query parameters
 
-None
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `id` | number | Yes | The unique record ID of the user to replace |
 
-### `POST` user request headers
+## Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` user request body
+## Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
@@ -44,10 +46,10 @@ None
 | `firstName` | string | Yes | The user's first name |
 | `email` | string | Yes | The user's email address |
 
-### `POST` user request syntax
+## Request syntax
 
 ```bash
-curl -X POST http://localhost:3000/users \
+curl -X PUT http://localhost:3000/users?id={id} \
   -H "Content-Type: application/json" \
   -d '{
     "lastName": "{lastName}",
@@ -56,43 +58,45 @@ curl -X POST http://localhost:3000/users \
   }'
 ```
 
-### `POST` user response format
+## Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `lastName` | string | user last name |
-| `firstName` | string | user first name |
-| `email` | string | user email address |
-| `id` | number | unique user record ID |
+| `lastName` | string | The user's last name |
+| `firstName` | string | The user's first name |
+| `email` | string | The user's email address |
+| `id` | number | The user's unique record ID |
 
-### `POST` user request example
+## Request example
 
 ```bash
-curl -X POST http://localhost:3000/users \
+curl -X PUT http://localhost:3000/users?id=1 \
   -H "Content-Type: application/json" \
   -d '{
-    "lastName": "Meere",
-    "firstName": "John",
-    "email": "johnm@gmail.com"
+    "lastName": "Renn",
+    "firstName": "David",
+    "email": "david.renn@uw.edu"
   }'
 ```
 
-### `POST` user response example
+## Response example
 
 ```json
 {
-  "lastName": "Meere",
-  "firstName": "John",
-  "email": "johnm@gmail.com",
+  "lastName": "Renn",
+  "firstName": "David",
+  "email": "david.renn@uw.edu",
   "id": 1
 }
 ```
 
-### `POST` user return status
+## Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 201 | Success | User created successfully |
+| 200 | Success | User replaced successfully |
+| 201 | Success | User created successfully, if user didn't exist |
 | 400 | Error | Invalid request body or missing required fields |
+| 404 | Error | Specified user record not found |
 | 409 | Error | User with this email already exists |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
