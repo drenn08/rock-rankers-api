@@ -26,10 +26,6 @@ Use the /users endpoint to create a new `user` using the `POST` method.
 {server_url}/users
 ```
 
-### `POST` user query parameters
-
-None
-
 ### `POST` user request headers
 
 | Header | Type | Required | Description |
@@ -43,6 +39,8 @@ None
 | `lastName` | string | Yes | The user's last name |
 | `firstName` | string | Yes | The user's first name |
 | `email` | string | Yes | The user's email address |
+
+**Note:** the server auto generates the `id` field. Don't include in the request.
 
 ### `POST` user request syntax
 

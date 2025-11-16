@@ -18,24 +18,20 @@ last_updated: "2025-11-14"
 
 Use the /albums endpoint to create a new `album` using the `POST` method.
 
-### `POST` album `URL`
+### URL
 
 ```shell
 
 {server_url}/albums
 ```
 
-### `POST` album query parameters
-
-None
-
-### `POST` album request headers
+### Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` album request body
+### Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
@@ -46,7 +42,7 @@ None
 | `global album ranking` | string | No | The global ranking of the album |
 | `band catalog album ranking` | string | No | The ranking of the album within the band's catalog |
 
-### `POST` album request syntax
+### Request syntax
 
 ```bash
 curl -X POST http://localhost:3000/albums \
@@ -61,7 +57,7 @@ curl -X POST http://localhost:3000/albums \
   }'
 ```
 
-### `POST` album response format
+### Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
@@ -71,8 +67,9 @@ curl -X POST http://localhost:3000/albums \
 | `album score` | string | The score rating of the album |
 | `global album ranking` | string | The global ranking of the album |
 | `band catalog album ranking` | string | The ranking of the album within the band's catalog |
+| `id` | integer | Unique identifier assigned by the server |
 
-### `POST` album request example
+### Request example
 
 ```bash
 curl -X POST http://localhost:3000/albums \
@@ -87,7 +84,7 @@ curl -X POST http://localhost:3000/albums \
   }'
 ```
 
-### `POST` album response example
+### Response example
 
 ```json
 {
@@ -96,18 +93,17 @@ curl -X POST http://localhost:3000/albums \
   "release date": "1994",
   "album score": "945",
   "global album ranking": "5",
-  "band catalog album ranking": "1"
+  "band catalog album ranking": "1",
+  "id": 5
 }
 ```
 
-### `POST` album return status
+### Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
 | 201 | Success | Album created successfully |
 | 400 | Error | Invalid request body or missing required fields |
-| 404 | Error | Specified band not found |
-| 409 | Error | Album with this name already exists for this band |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
 
 ---

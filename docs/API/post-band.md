@@ -19,24 +19,20 @@ last_updated: "2025-11-14"
 
 Use the /bands endpoint to create a new `band` using the `POST` method.
 
-### `POST` band URL
+### URL
 
 ```shell
 
 {server_url}/bands
 ```
 
-### `POST` band query parameters
-
-None
-
-### `POST` band request headers
+### Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` band request body
+### Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
@@ -45,7 +41,7 @@ None
 | `years active` | string | Yes | The years the band was/is active |
 | `origin` | string | Yes | The origin location of the band |
 
-### `POST` band request syntax
+### Request syntax
 
 ```bash
 curl -X POST http://localhost:3000/bands \
@@ -58,7 +54,7 @@ curl -X POST http://localhost:3000/bands \
   }'
 ```
 
-### `POST` band response format
+### Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
@@ -66,8 +62,9 @@ curl -X POST http://localhost:3000/bands \
 | `genre` | string | The band genre |
 | `years active` | string | The years the band was/is active |
 | `origin` | string | The origin location of the band |
+| `id` | integer |  Unique identifier assigned by the server|
 
-### `POST` band request example
+### Request example
 
 ```bash
 curl -X POST http://localhost:3000/bands \
@@ -80,24 +77,24 @@ curl -X POST http://localhost:3000/bands \
   }'
 ```
 
-### `POST` band response example
+### Response example
 
 ```json
 {
   "name": "Soundgarden",
   "genre": "rock, alternative, grunge",
-  "years active": "1984-1997; 2010-2017 ",
-  "origin": "Seattle, Washington, USA"
+  "years active": "1984-1997; 2010-2017",
+  "origin": "Seattle, Washington, USA",
+  "id": 5
 }
 ```
 
-### `POST` band return status
+### Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
 | 201 | Success | Band created successfully |
 | 400 | Error | Invalid request body or missing required fields |
-| 409 | Error | Band with this name already exists |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
 
 ---

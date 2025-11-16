@@ -53,6 +53,20 @@
       "genre": "rock, alternative, metal, rap, funk",
       "years active": "1991-2000; 2008-2011; 2019-2024",
       "origin": "Los Angeles, California, USA"
+    },
+    {
+      "name": "Soundgarden",
+      "genre": "rock, alternative, grunge",
+      "years active": "1984-1997; 2010-2017",
+      "origin": "Seattle, Washington, USA",
+      "id": 5
+    },
+    {
+      "name": "Soundgarden",
+      "genre": "rock, alternative, grunge",
+      "years active": "1984-1997; 2010-2017",
+      "origin": "Seattle, Washington, USA",
+      "id": 6
     }
   ],
   "albums": [
@@ -91,6 +105,15 @@
       "album score": "879",
       "global album ranking": "4",
       "band catalog album ranking": "1"
+    },
+    {
+      "name": "Soundgarden",
+      "album": "Superunknown",
+      "release date": "1994",
+      "album score": "945",
+      "global album ranking": "5",
+      "band catalog album ranking": "1",
+      "id": 5
     }
   ]
 }
