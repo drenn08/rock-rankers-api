@@ -1,5 +1,5 @@
 ---
-title: "Users"
+title: "Users Resource"
 layout: default
 nav_order: 3
 parent: "API Reference Docs"

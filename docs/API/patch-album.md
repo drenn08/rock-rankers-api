@@ -1,12 +1,12 @@
 ---
-title: "POST: create a new album"
+title: "PATCH: delete a album"
 layout: default
-nav_order: 1
+nav_order: 3
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
-permalink: /api-reference-docs/albums/post-album/
+permalink: /api-reference-docs/bands/patch-album/
 has_toc: false
-description: "Create a new album using the POST method"
+description: "Delete an album using the `PATCH` method"
 tags:
   - api
 categories:
@@ -14,42 +14,46 @@ categories:
 version: "v1.0"
 last_updated: "2025-11-14"
 ---
-## `POST`: create a new album
 
-Use the /albums endpoint to create a new `album` using the `POST` method.
+## `PATCH`: delete an album
 
-### `POST` album `URL`
+Use the /albums endpoint to delete an existing `album` using the `PATCH` method.
+
+## URL
 
 ```shell
 
-{server_url}/albums
+{server_url}/albums?name={name}&album={album}
 ```
 
-### `POST` album query parameters
+## Query parameters
 
-None
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `name` | string | Yes | The name of the band that created the album |
+| `album` | string | Yes | The name of the album to update |
 
-### `POST` album request headers
+## Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` album request body
+## Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
-| `name` | string | Yes | The name of the band that created the album |
-| `album` | string | Yes | The name of the album |
-| `release date` | string | Yes | The release date of the album |
-| `album score` | string | Yes | The score rating of the album |
+| `name` | string | No | The name of the band that created the album |
+| `album` | string | No | The name of the album |
+| `release date` | string | No | The release date of the album |
+| `album score` | string | No | The score rating of the album |
 | `global album ranking` | string | No | The global ranking of the album |
 | `band catalog album ranking` | string | No | The ranking of the album within the band's catalog |
 
-### `POST` album request syntax
+## Request syntax
 
 ```bash
-curl -X POST http://localhost:3000/albums \
+curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
   -H "Content-Type: application/json" \
   -d '{
     "name": "{name}",
@@ -61,7 +65,7 @@ curl -X POST http://localhost:3000/albums \
   }'
 ```
 
-### `POST` album response format
+## Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
@@ -72,42 +76,36 @@ curl -X POST http://localhost:3000/albums \
 | `global album ranking` | string | The global ranking of the album |
 | `band catalog album ranking` | string | The ranking of the album within the band's catalog |
 
-### `POST` album request example
+## Request example
 
 ```bash
-curl -X POST http://localhost:3000/albums \
+curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "Soundgarden",
-    "album": "Superunknown",
-    "release date": "1994",
-    "album score": "945",
-    "global album ranking": "5",
-    "band catalog album ranking": "1"
+    "album score": "950",
+    "global album ranking": "4"
   }'
 ```
 
-### `POST` album response example
+## Response example
 
 ```json
 {
   "name": "Soundgarden",
   "album": "Superunknown",
   "release date": "1994",
-  "album score": "945",
-  "global album ranking": "5",
+  "album score": "950",
+  "global album ranking": "4",
   "band catalog album ranking": "1"
 }
 ```
 
-### `POST` album return status
+## Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 201 | Success | Album created successfully |
-| 400 | Error | Invalid request body or missing required fields |
-| 404 | Error | Specified band not found |
+| 200 | Success | Album updated successfully |
+| 400 | Error | Invalid request body |
+| 404 | Error | Specified album not found |
 | 409 | Error | Album with this name already exists for this band |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
-
----

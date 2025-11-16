@@ -1,12 +1,12 @@
 ---
-title: "POST: create a new band"
+title: "PUT: update a band"
 layout: default
-nav_order: 1
+nav_order: 2
 parent: "Bands Resource"
 grand_parent: "API Reference Docs"
-permalink: /api-reference-docs/bands/post-band/
+permalink: /api-reference-docs/bands/put-band/
 has_toc: false
-description: "Create a new band using the POST method"
+description: "Update an existing band using the PUT method"
 tags:
   - api
 categories:
@@ -15,40 +15,42 @@ version: "v1.0"
 last_updated: "2025-11-14"
 ---
 
-## `POST`: create a new band
+## `PUT`: update an existing band
 
-Use the /bands endpoint to create a new `band` using the `POST` method.
+Use the /bands endpoint to update an existing `band` using the `PUT` method.
 
-### `POST` band URL
+## URL
 
 ```shell
 
-{server_url}/bands
+{server_url}/bands?name={name}
 ```
 
-### `POST` band query parameters
+## Query parameters
 
-None
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `name` | string | Yes | The name of the band to replace |
 
-### `POST` band request headers
+## Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` band request body
+## Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
-| `name` | string | Yes | The band name |
-| `genre` | string | Yes | The band genre |
+| `name` | string | Yes | band name |
+| `genre` | string | Yes | band genre |
 | `years active` | string | Yes | The years the band was/is active |
 | `origin` | string | Yes | The origin location of the band |
 
-### `POST` band request syntax
+## Request syntax
 
 ```bash
-curl -X POST http://localhost:3000/bands \
+curl -X PUT http://localhost:3000/bands?name={name} \
   -H "Content-Type: application/json" \
   -d '{
     "name": "{name}",
@@ -58,46 +60,46 @@ curl -X POST http://localhost:3000/bands \
   }'
 ```
 
-### `POST` band response format
+## Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `name` | string | The band name |
-| `genre` | string | The band genre |
+| `name` | string | band name |
+| `genre` | string | bad genre |
 | `years active` | string | The years the band was/is active |
 | `origin` | string | The origin location of the band |
 
-### `POST` band request example
+## Request example
 
 ```bash
-curl -X POST http://localhost:3000/bands \
+curl -X PUT http://localhost:3000/bands?name=Soundgarden \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Soundgarden",
-    "genre": "rock, alternative, grunge",
+    "genre": "rock, alternative, grunge, metal",
     "years active": "1984-1997; 2010-2019",
     "origin": "Seattle, Washington, USA"
   }'
 ```
 
-### `POST` band response example
+## Response example
 
 ```json
 {
   "name": "Soundgarden",
-  "genre": "rock, alternative, grunge",
+  "genre": "rock, alternative, grunge, metal",
   "years active": "1984-1997; 2010-2019",
   "origin": "Seattle, Washington, USA"
 }
 ```
 
-### `POST` band return status
+## Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 201 | Success | Band created successfully |
+| 200 | Success | Band replaced successfully |
+| 201 | Success | Band created successfully, if resource didn't exist |
 | 400 | Error | Invalid request body or missing required fields |
+| 404 | Error | Specified band not found |
 | 409 | Error | Band with this name already exists |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
-
----
