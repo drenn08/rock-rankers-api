@@ -1,50 +1,54 @@
 {
   "users": [
     {
+      "id": 1,
       "lastName": "Renn",
       "firstName": "David",
-      "email": "drenn08@uw.edu",
-      "id": 1
+      "email": "drenn08@uw.edu"
     },
     {
+      "id": 2,
       "lastName": "D",
       "firstName": "Gill",
-      "email": "gilld@uw.edu",
-      "id": 2
+      "email": "gilld@uw.edu"
     },
     {
+      "id": 3,
       "lastName": "Watson",
       "firstName": "Bob",
-      "email": "bobwatson@uw.edu",
-      "id": 3
+      "email": "bobwatson@uw.edu"
     },
     {
+      "id": 4,
       "lastName": "Plan",
       "firstName": "Robert",
-      "email": "ledzeppelin@aol.com",
-      "id": 4
+      "email": "ledzeppelin@aol.com"
     }
   ],
   "bands": [
     {
+      "id": 1,
       "name": "The Beatles",
       "genre": "rock, pop, psychedelia",
       "years active": "1960-1970",
       "origin": "Liverpool, England"
     },
     {
+      "id": 2,
       "name": "Led Zeppelin",
       "genre": "rock, blues, folk, metal",
       "years active": "1968-1980",
       "origin": "London, England"
     },
     {
+      "id": 3,
       "name": "Radiohead",
       "genre": "rock, alternative, electronica",
       "years active": "1985-present",
       "origin": "Abingdon, Oxfordshire, England"
     },
     {
+      "id": 4,
       "name": "Rage Against the Machine",
       "genre": "rock, alternative, metal, rap, funk",
       "years active": "1991-2000; 2008-2011; 2019-2024",
@@ -53,6 +57,7 @@
   ],
   "albums": [
     {
+      "id": 1,
       "name": "The Beatles",
       "album": "Rubber Soul",
       "release date": "1965",
@@ -61,6 +66,7 @@
       "band catalog album ranking": "1"
     },
     {
+      "id": 2,
       "name": "Led Zeppelin",
       "album": "Led Zeppelin I",
       "release date": "1969",
@@ -69,6 +75,7 @@
       "band catalog album ranking": "1"
     },
     {
+      "id": 3,
       "name": "Radiohead",
       "album": "Ok Computer",
       "release date": "1997",
@@ -77,6 +84,7 @@
       "band catalog album ranking": "1"
     },
     {
+      "id": 4,
       "name": "Rage Against the Machine",
       "album": "Rage Against the Machine",
       "release date": "1992",

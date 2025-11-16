@@ -75,7 +75,7 @@ curl -X POST http://localhost:3000/bands \
   -d '{
     "name": "Soundgarden",
     "genre": "rock, alternative, grunge",
-    "years active": "1984-1997; 2010-2019",
+    "years active": "1984-1997; 2010-2017",
     "origin": "Seattle, Washington, USA"
   }'
 ```
@@ -86,7 +86,7 @@ curl -X POST http://localhost:3000/bands \
 {
   "name": "Soundgarden",
   "genre": "rock, alternative, grunge",
-  "years active": "1984-1997; 2010-2019",
+  "years active": "1984-1997; 2010-2017 ",
   "origin": "Seattle, Washington, USA"
 }
 ```
