@@ -24,14 +24,6 @@ Use the /albums endpoint to create a new `album` using the `POST` method.
 {server_url}/albums
 ```
 
-When testing, the {server_url} is the local host: <http://localhost:3000/albums>
-
-### Path parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| None | - | - | This endpoint uses the base `/albums` path |
-
 ### Request headers
 
 | Header | Type | Required | Description |
@@ -72,10 +64,10 @@ curl -X POST http://localhost:3000/albums \
 | ------------- | ----------- | ----------- |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release-date` | string | The release date of the album |
-| `album-score` | string | The score rating of the album |
-| `global-album-ranking` | string | The global ranking of the album |
-| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
+| `release date` | string | The release date of the album |
+| `album score` | string | The score rating of the album |
+| `global album ranking` | string | The global ranking of the album |
+| `band catalog album ranking` | string | The ranking of the album within the band's catalog |
 | `id` | integer | Unique identifier assigned by the server |
 
 ### Request example
@@ -99,10 +91,10 @@ curl -X POST http://localhost:3000/albums \
 {
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "945",
-  "global-album-ranking": "5",
-  "band-catalog-album-ranking": "1",
+  "release date": "1994",
+  "album score": "945",
+  "global album ranking": "5",
+  "band catalog album ranking": "1",
   "id": 5
 }
 ```

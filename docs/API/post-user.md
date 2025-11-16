@@ -25,15 +25,7 @@ Use the /users endpoint to create a new `user` using the `POST` method.
 {server_url}/users
 ```
 
-When testing, the {server_url} is the local host: <http://localhost:3000/users>
-
-### Path parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| None | - | - | This endpoint uses the base `/users` path |
-
-### Request headers
+### `POST` user request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
@@ -49,7 +41,7 @@ When testing, the {server_url} is the local host: <http://localhost:3000/users>
 
 **Note:** the server auto generates the `id` field. Don't include in the request.
 
-### Request syntax
+### `POST` user request syntax
 
 ```bash
 curl -X POST http://localhost:3000/users \

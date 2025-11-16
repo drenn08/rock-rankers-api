@@ -2,26 +2,26 @@
   "users": [
     {
       "id": 1,
-      "last-name": "Renn",
-      "first-name": "David",
+      "lastName": "Renn",
+      "firstName": "David",
       "email": "drenn08@uw.edu"
     },
     {
       "id": 2,
-      "last-name": "D",
-      "first-name": "Gill",
+      "lastName": "D",
+      "firstName": "Gill",
       "email": "gilld@uw.edu"
     },
     {
       "id": 3,
-      "last-name": "Watson",
-      "first-name": "Bob",
+      "lastName": "Watson",
+      "firstName": "Bob",
       "email": "bobwatson@uw.edu"
     },
     {
       "id": 4,
-      "last-name": "Plan",
-      "first-name": "Robert",
+      "lastName": "Plan",
+      "firstName": "Robert",
       "email": "ledzeppelin@aol.com"
     }
   ],
@@ -55,11 +55,18 @@
       "origin": "Los Angeles, California, USA"
     },
     {
-      "id": 5,
       "name": "Soundgarden",
       "genre": "rock, alternative, grunge",
-      "years-active": "1984-1997; 2010-2017",
-      "origin": "Seattle, Washington, USA"
+      "years active": "1984-1997; 2010-2017",
+      "origin": "Seattle, Washington, USA",
+      "id": 5
+    },
+    {
+      "name": "Soundgarden",
+      "genre": "rock, alternative, grunge",
+      "years active": "1984-1997; 2010-2017",
+      "origin": "Seattle, Washington, USA",
+      "id": 6
     }
   ],
   "albums": [
@@ -94,19 +101,19 @@
       "id": 4,
       "name": "Rage Against the Machine",
       "album": "Rage Against the Machine",
-      "release-date": "1992",
-      "album-score": "879",
-      "global-album-ranking": "4",
-      "band-catalog-album-ranking": "1"
+      "release date": "1992",
+      "album score": "879",
+      "global album ranking": "4",
+      "band catalog album ranking": "1"
     },
     {
-      "id": 5,
       "name": "Soundgarden",
       "album": "Superunknown",
-      "release-date": "1994",
-      "album-score": "945",
-      "global-album-ranking": "5",
-      "band-catalog-album-ranking": "1"
+      "release date": "1994",
+      "album score": "945",
+      "global album ranking": "5",
+      "band catalog album ranking": "1",
+      "id": 5
     }
   ]
 }

@@ -25,14 +25,6 @@ Use the /bands endpoint to create a new `band` using the `POST` method.
 {server_url}/bands
 ```
 
-When testing, the {server_url} is the local host: <http://localhost:3000/bands>
-
-### Path parameters
-
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| None | - | - | This endpoint uses the base `/bands` path |
-
 ### Request headers
 
 | Header | Type | Required | Description |
@@ -47,8 +39,6 @@ When testing, the {server_url} is the local host: <http://localhost:3000/bands>
 | `genre` | string | Yes | The band genre |
 | `years-active` | string | Yes | The years the band was/is active |
 | `origin` | string | Yes | The origin location of the band |
-
-**Note:** the server auto generates the `id` field. Don't include in the request.
 
 ### Request syntax
 
@@ -71,7 +61,7 @@ curl -X POST http://localhost:3000/bands \
 | `genre` | string | The band genre |
 | `years-active` | string | The years the band was/is active |
 | `origin` | string | The origin location of the band |
-| `id` | integer | Unique identifier assigned by the server |
+| `id` | integer |  Unique identifier assigned by the server|
 
 ### Request example
 
@@ -81,7 +71,7 @@ curl -X POST http://localhost:3000/bands \
   -d '{
     "name": "Soundgarden",
     "genre": "rock, alternative, grunge",
-    "years-active": "1984-1997; 2010-2017",
+    "years active": "1984-1997; 2010-2017",
     "origin": "Seattle, Washington, USA"
   }'
 ```
@@ -92,7 +82,7 @@ curl -X POST http://localhost:3000/bands \
 {
   "name": "Soundgarden",
   "genre": "rock, alternative, grunge",
-  "years-active": "1984-1997; 2010-2017",
+  "years active": "1984-1997; 2010-2017",
   "origin": "Seattle, Washington, USA",
   "id": 5
 }
