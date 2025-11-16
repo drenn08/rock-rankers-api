@@ -15,84 +15,90 @@ version: "v1.0"
 last_updated: "2025-11-14"
 ---
 
-## `POST`: create a new user
+## Create a new user
 
 Use the /users endpoint to create a new `user` using the `POST` method.
 
-### `POST` user `URL`
+### URL
 
 ```shell
-
 {server_url}/users
 ```
 
-### `POST` user query parameters
+When testing, the {server_url} is the local host: <http://localhost:3000/users>
 
-None
+### Path parameters
 
-### `POST` user request headers
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| None | - | - | This endpoint uses the base `/users` path |
+
+### Request headers
 
 | Header | Type | Required | Description |
 |--------|------|----------|-------------|
 | `Content-Type` | string | Yes | Must be `application/json` |
 
-### `POST` user request body
+### Request body
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
-| `lastName` | string | Yes | The user's last name |
-| `firstName` | string | Yes | The user's first name |
+| `last-name` | string | Yes | The user's last name |
+| `first-name` | string | Yes | The user's first name |
 | `email` | string | Yes | The user's email address |
 
-### `POST` user request syntax
+**Note:** the server auto generates the `id` field. Don't include in the request.
+
+### Request syntax
 
 ```bash
 curl -X POST http://localhost:3000/users \
   -H "Content-Type: application/json" \
   -d '{
-    "lastName": "{lastName}",
-    "firstName": "{firstName}",
+    "last-name": "{last-name}",
+    "first-name": "{first-name}",
     "email": "{email}"
   }'
 ```
 
-### `POST` user response format
+### Response format
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `lastName` | string | user last name |
-| `firstName` | string | user first name |
-| `email` | string | user email address |
-| `id` | number | unique user record ID |
+| `last-name` | string | The user's last name |
+| `first-name` | string | The user's first name |
+| `email` | string | The user's email address |
+| `id` | integer | Unique identifier assigned by the server |
 
-### `POST` user request example
+### Request example
 
 ```bash
 curl -X POST http://localhost:3000/users \
   -H "Content-Type: application/json" \
   -d '{
-    "lastName": "Meere",
-    "firstName": "John",
+    "last-name": "Meere",
+    "first-name": "John",
     "email": "johnm@gmail.com"
   }'
 ```
 
-### `POST` user response example
+### Response example
 
 ```json
 {
-  "lastName": "Meere",
-  "firstName": "John",
+  "last-name": "Meere",
+  "first-name": "John",
   "email": "johnm@gmail.com",
-  "id": 1
+  "id": 5
 }
 ```
 
-### `POST` user return status
+### Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
 | 201 | Success | User created successfully |
 | 400 | Error | Invalid request body or missing required fields |
-| 409 | Error | User with this email already exists |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
+
+---

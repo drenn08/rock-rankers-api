@@ -22,16 +22,16 @@ Use the /albums endpoint to update an existing `album` using the `PUT` method.
 ## URL
 
 ```shell
-
-{server_url}/albums?name={name}&album={album}
+{server_url}/albums/{id}
 ```
 
-## Query parameters
+When testing, the {server_url} is the local host: <http://localhost:3000/albums/{id}>
+
+## Path parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `name` | string | Yes | The name of the band that created the album |
-| `album` | string | Yes | The name of the album to replace |
+| `id` | integer | Yes | The unique identifier of the album to update |
 
 ## Request headers
 
@@ -45,23 +45,23 @@ Use the /albums endpoint to update an existing `album` using the `PUT` method.
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | Yes | The name of the band that created the album |
 | `album` | string | Yes | The name of the album |
-| `release date` | string | Yes | The release date of the album |
-| `album score` | string | Yes | The score rating of the album |
-| `global album ranking` | string | No | The global ranking of the album |
-| `band catalog album ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | string | Yes | The release date of the album |
+| `album-score` | string | Yes | The score rating of the album |
+| `global-album-ranking` | string | No | The global ranking of the album |
+| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
 
 ## Request syntax
 
 ```bash
-curl -X PUT http://localhost:3000/albums?name={name}&album={album} \
+curl -X PUT "http://localhost:3000/albums/{id}" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "{name}",
     "album": "{album}",
-    "release date": "{release date}",
-    "album score": "{album score}",
-    "global album ranking": "{global album ranking}",
-    "band catalog album ranking": "{band catalog album ranking}"
+    "release-date": "{release-date}",
+    "album-score": "{album-score}",
+    "global-album-ranking": "{global-album-ranking}",
+    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
   }'
 ```
 
@@ -69,25 +69,42 @@ curl -X PUT http://localhost:3000/albums?name={name}&album={album} \
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
+| `id` | integer | Unique album identifier |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release date` | string | The release date of the album |
-| `album score` | string | The score rating of the album |
-| `global album ranking` | string | The global ranking of the album |
-| `band catalog album ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | string | The release date of the album |
+| `album-score` | string | The score rating of the album |
+| `global-album-ranking` | string | The global ranking of the album |
+| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
 
 ## Request example
 
+**Original Resource:**
+
+```json
+{
+  "id": 5,
+  "name": "Soundgarden",
+  "album": "Superunknown",
+  "release-date": "1994",
+  "album-score": "945",
+  "global-album-ranking": "5",
+  "band-catalog-album-ranking": "1"
+}
+```
+
+This example updates the **album-score** and **global-album-ranking**.
+
 ```bash
-curl -X PUT http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
+curl -X PUT "http://localhost:3000/albums/5" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Soundgarden",
     "album": "Superunknown",
-    "release date": "1994",
-    "album score": "950",
-    "global album ranking": "4",
-    "band catalog album ranking": "1"
+    "release-date": "1994",
+    "album-score": "950",
+    "global-album-ranking": "4",
+    "band-catalog-album-ranking": "1"
   }'
 ```
 
@@ -95,12 +112,13 @@ curl -X PUT http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
 
 ```json
 {
+  "id": 5,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release date": "1994",
-  "album score": "950",
-  "global album ranking": "4",
-  "band catalog album ranking": "1"
+  "release-date": "1994",
+  "album-score": "950",
+  "global-album-ranking": "4",
+  "band-catalog-album-ranking": "1"
 }
 ```
 
@@ -108,9 +126,7 @@ curl -X PUT http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 200 | Success | Album replaced successfully |
-| 201 | Success | Album created successfully, if resource didn't exist |
+| 200 | Success | Album updated successfully |
 | 400 | Error | Invalid request body or missing required fields |
 | 404 | Error | Specified album not found |
-| 409 | Error | Album with this name already exists for this band |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |

@@ -22,15 +22,16 @@ Use the /bands endpoint to update an existing `band` using the `PUT` method.
 ## URL
 
 ```shell
-
-{server_url}/bands?name={name}
+{server_url}/bands/{id}
 ```
 
-## Query parameters
+When testing, the {server_url} is the local host: <http://localhost:3000/bands/{id}>
+
+## Path parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `name` | string | Yes | The name of the band to replace |
+| `id` | integer | Yes | The unique identifier of the band to update |
 
 ## Request headers
 
@@ -42,20 +43,20 @@ Use the /bands endpoint to update an existing `band` using the `PUT` method.
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
-| `name` | string | Yes | band name |
-| `genre` | string | Yes | band genre |
-| `years active` | string | Yes | The years the band was/is active |
+| `name` | string | Yes | The band name |
+| `genre` | string | Yes | The band genre |
+| `years-active` | string | Yes | The years the band was/is active |
 | `origin` | string | Yes | The origin location of the band |
 
 ## Request syntax
 
 ```bash
-curl -X PUT http://localhost:3000/bands?name={name} \
+curl -X PUT "http://localhost:3000/bands/{id}" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "{name}",
     "genre": "{genre}",
-    "years active": "{years active}",
+    "years-active": "{years-active}",
     "origin": "{origin}"
   }'
 ```
@@ -64,20 +65,35 @@ curl -X PUT http://localhost:3000/bands?name={name} \
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `name` | string | band name |
-| `genre` | string | bad genre |
-| `years active` | string | The years the band was/is active |
+| `id` | integer | Unique band identifier |
+| `name` | string | The band name |
+| `genre` | string | The band genre |
+| `years-active` | string | The years the band was/is active |
 | `origin` | string | The origin location of the band |
 
 ## Request example
 
+**Original Resource:**
+
+```json
+{
+  "id": 5,
+  "name": "Soundgarden",
+  "genre": "rock, alternative, grunge, metal",
+  "years-active": "1984-1997; 2010-2019",
+  "origin": "Seattle, Washington, USA"
+}
+```
+
+This example removes the **genre: grunge**.
+
 ```bash
-curl -X PUT http://localhost:3000/bands?name=Soundgarden \
+curl -X PUT "http://localhost:3000/bands/5" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Soundgarden",
-    "genre": "rock, alternative, grunge, metal",
-    "years active": "1984-1997; 2010-2019",
+    "genre": "rock, alternative",
+    "years-active": "1984-1997; 2010-2019",
     "origin": "Seattle, Washington, USA"
   }'
 ```
@@ -86,9 +102,10 @@ curl -X PUT http://localhost:3000/bands?name=Soundgarden \
 
 ```json
 {
+  "id": 5,
   "name": "Soundgarden",
-  "genre": "rock, alternative, grunge, metal",
-  "years active": "1984-1997; 2010-2019",
+  "genre": "rock, alternative",
+  "years-active": "1984-1997; 2010-2019",
   "origin": "Seattle, Washington, USA"
 }
 ```
@@ -97,9 +114,7 @@ curl -X PUT http://localhost:3000/bands?name=Soundgarden \
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 200 | Success | Band replaced successfully |
-| 201 | Success | Band created successfully, if resource didn't exist |
+| 200 | Success | Band updated successfully |
 | 400 | Error | Invalid request body or missing required fields |
 | 404 | Error | Specified band not found |
-| 409 | Error | Band with this name already exists |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |

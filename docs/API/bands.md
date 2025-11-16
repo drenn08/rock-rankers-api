@@ -12,7 +12,7 @@ tags:
 categories:
   - api-reference
 version: "v1.0"
-last_updated: "2025-11-11"
+last_updated: "2025-11-14"
 ---
 
 ## `bands` resource
@@ -37,7 +37,7 @@ Sample `bands` resource
 {
     "name": "The Beatles",
     "genre": "rock, pop, psychedelia",
-    "years active": "1960-1970",
+    "years-active": "1960-1970",
     "origin": "Liverpool, England",
     "id": 1
 }
@@ -47,7 +47,7 @@ Sample `bands` resource
 | ------------- | ----------- | ----------- |
 | `name` | string | The band's name |
 | `genre` | string | The band's genre, comma-separated |
-| `years active` | string | The years the band was active |
+| `years-active` | string | The years the band was active |
 | `origin` | string | The band's place of origin |
 | `id` | number | The band's unique record ID |
 

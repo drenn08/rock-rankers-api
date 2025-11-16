@@ -12,7 +12,7 @@ tags:
 categories:
   - api-reference
 version: "v1.0"
-last_updated: "2025-11-11"
+last_updated: "2025-11-14"
 ---
 
 ## `users` resource
@@ -36,19 +36,19 @@ Sample `user` resource
 ```js
 
 {
-    "lastName": "Renn",
-    "firstName": "David",
-    "email": "drenn08@uw.edu",
-    "id": 1
+    "id": 1,
+    "last-name": "Renn",
+    "first-name": "David",
+    "email": "drenn08@uw.edu"
 }
 ```
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `lastName` | string | The user's last name |
-| `firstName` | string | The user's first name |
-| `email` | string | The user's email address |
 | `id` | number | The user's unique record ID |
+| `last-name` | string | The user's last name |
+| `first-name` | string | The user's first name |
+| `email` | string | The user's email address |
 
 ## Read operations
 

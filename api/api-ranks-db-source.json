@@ -1,88 +1,112 @@
 {
   "users": [
     {
-      "lastName": "Renn",
-      "firstName": "David",
-      "email": "drenn08@uw.edu",
-      "id": 1
+      "id": 1,
+      "last-name": "Renn",
+      "first-name": "David",
+      "email": "drenn08@uw.edu"
     },
     {
-      "lastName": "D",
-      "firstName": "Gill",
-      "email": "gilld@uw.edu",
-      "id": 2
+      "id": 2,
+      "last-name": "D",
+      "first-name": "Gill",
+      "email": "gilld@uw.edu"
     },
     {
-      "lastName": "Watson",
-      "firstName": "Bob",
-      "email": "bobwatson@uw.edu",
-      "id": 3
+      "id": 3,
+      "last-name": "Watson",
+      "first-name": "Bob",
+      "email": "bobwatson@uw.edu"
     },
     {
-      "lastName": "Plan",
-      "firstName": "Robert",
-      "email": "ledzeppelin@aol.com",
-      "id": 4
+      "id": 4,
+      "last-name": "Plan",
+      "first-name": "Robert",
+      "email": "ledzeppelin@aol.com"
     }
   ],
   "bands": [
     {
+      "id": 1,
       "name": "The Beatles",
       "genre": "rock, pop, psychedelia",
-      "years active": "1960-1970",
+      "years-active": "1960-1970",
       "origin": "Liverpool, England"
     },
     {
+      "id": 2,
       "name": "Led Zeppelin",
       "genre": "rock, blues, folk, metal",
-      "years active": "1968-1980",
+      "years-active": "1968-1980",
       "origin": "London, England"
     },
     {
+      "id": 3,
       "name": "Radiohead",
       "genre": "rock, alternative, electronica",
-      "years active": "1985-present",
+      "years-active": "1985-present",
       "origin": "Abingdon, Oxfordshire, England"
     },
     {
+      "id": 4,
       "name": "Rage Against the Machine",
       "genre": "rock, alternative, metal, rap, funk",
-      "years active": "1991-2000; 2008-2011; 2019-2024",
+      "years-active": "1991-2000; 2008-2011; 2019-2024",
       "origin": "Los Angeles, California, USA"
+    },
+    {
+      "id": 5,
+      "name": "Soundgarden",
+      "genre": "rock, alternative, grunge",
+      "years-active": "1984-1997; 2010-2017",
+      "origin": "Seattle, Washington, USA"
     }
   ],
   "albums": [
     {
+      "id": 1,
       "name": "The Beatles",
       "album": "Rubber Soul",
-      "release date": "1965",
-      "album score": "987",
-      "global album ranking": "1",
-      "band catalog album ranking": "1"
+      "release-date": "1965",
+      "album-score": "987",
+      "global-album-ranking": "1",
+      "band-catalog-album-ranking": "1"
     },
     {
+      "id": 2,
       "name": "Led Zeppelin",
       "album": "Led Zeppelin I",
-      "release date": "1969",
-      "album score": "961",
-      "global album ranking": "2",
-      "band catalog album ranking": "1"
+      "release-date": "1969",
+      "album-score": "961",
+      "global-album-ranking": "2",
+      "band-catalog-album-ranking": "1"
     },
     {
+      "id": 3,
       "name": "Radiohead",
       "album": "Ok Computer",
-      "release date": "1997",
-      "album score": "955",
-      "global album ranking": "3",
-      "band catalog album ranking": "1"
+      "release-date": "1997",
+      "album-score": "955",
+      "global-album-ranking": "3",
+      "band-catalog-album-ranking": "1"
     },
     {
+      "id": 4,
       "name": "Rage Against the Machine",
       "album": "Rage Against the Machine",
-      "release date": "1992",
-      "album score": "879",
-      "global album ranking": "4",
-      "band catalog album ranking": "1"
+      "release-date": "1992",
+      "album-score": "879",
+      "global-album-ranking": "4",
+      "band-catalog-album-ranking": "1"
+    },
+    {
+      "id": 5,
+      "name": "Soundgarden",
+      "album": "Superunknown",
+      "release-date": "1994",
+      "album-score": "945",
+      "global-album-ranking": "5",
+      "band-catalog-album-ranking": "1"
     }
   ]
 }
