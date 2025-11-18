@@ -17,7 +17,7 @@ last_updated: "2025-11-14"
 
 ## `PUT`: update an existing user
 
-Use the /users endpoint to update an existing `user` using the `PUT` method.
+Use the /users endpoint to update an existing `user` using the `PUT` method. Provide all fields, even if unchanged.
 
 ## URL
 

@@ -17,7 +17,7 @@ last_updated: "2025-11-14"
 
 ## `PUT`: update an existing album
 
-Use the /albums endpoint to update an existing `album` using the `PUT` method.
+Use the /albums endpoint to update an existing `album` using the `PUT` method. Provide all fields, even if unchanged
 
 ## URL
 

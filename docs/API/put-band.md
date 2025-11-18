@@ -17,7 +17,7 @@ last_updated: "2025-11-14"
 
 ## `PUT`: update an existing band
 
-Use the /bands endpoint to update an existing `band` using the `PUT` method.
+Use the /bands endpoint to update an existing `band` using the `PUT` method. Provide all fields, even if unchanged
 
 ## URL
 
