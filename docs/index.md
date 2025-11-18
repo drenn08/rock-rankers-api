@@ -25,7 +25,7 @@ Rock-rankers is for developers building streaming apps and sites for rock fans w
 
 Placeholder, Add a sample rock rakers query and response.
 
-## Note
+### Note
 
 The Rock Rankers API is an educational project demonstrating REST API documentation for managing rock music rankings. It runs locally via JSON Server. See [Getting Started](./Tutorials/rock-rankers%20environment%20set-up.md) for setup.
 
@@ -63,24 +63,24 @@ Rock-rankers supports the following typical `HTTP` functions:
 
 **Bands**
 
-* [POST: create a new band](/rock-rankers-api/api-reference-docs/bands/post-band/)
-* [PUT: update a band](/rock-rankers-api/api-reference-docs/bands/put-band/)
-* [PATCH: update a band field](/rock-rankers-api/api-reference-docs/bands/patch-band/)
-* [DELETE: delete a band](/rock-rankers-api/api-reference-docs/bands/delete-band/)
+* [POST: create a new band](./API/post-band.md)
+* [PUT: update a band](./API/put-band.md)
+* [PATCH: update a band field](./API/patch-band.md)
+* [DELETE: delete a band](./API/delete-band.md)
 
 **Albums**
 
-* [POST: create a new album](/rock-rankers-api/api-reference-docs/albums/post-album/)
-* [PUT: update an album](/rock-rankers-api/api-reference-docs/albums/put-album/)
-* [PATCH: update an album field](/rock-rankers-api/api-reference-docs/albums/patch-album/)
-* [DELETE: delete an album](/rock-rankers-api/api-reference-docs/albums/delete-album/)
+* [POST: create a new album](./API/post-album.md)
+* [PUT: update an album](./API/put-album.md)
+* [PATCH: update an album field](./API/patch-album.md)
+* [DELETE: delete an album](./API/delete-album.md)
 
 **Users**
 
-* [POST: create a new user](/rock-rankers-api/api-reference-docs/users/post-user/)
-* [PUT: update a user](/rock-rankers-api/api-reference-docs/users/put-user/)
-* [PATCH: update a user](/rock-rankers-api/api-reference-docs/users/patch-user/)
-* [DELETE: delete a user](/rock-rankers-api/api-reference-docs/users/delete-user/)
+* [POST: create a new user](./API/post-user.md)
+* [PUT: update a user](./API/put-user.md)
+* [PATCH: update a user](./API/patch-user.md)
+* [DELETE: delete a user](./API/delete-user.md)
   
 ### View the rock-rankers repo and OpenAPI specification
 
