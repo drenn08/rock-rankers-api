@@ -1,22 +1,23 @@
 ---
-title: "PATCH: delete a user"
+title: "PATCH: partially update a user"
 layout: default
 nav_order: 3
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
-permalink: /api-reference-docs/users/delete-user/
+permalink: /api-reference-docs/users/patch-user/
 has_toc: false
-description: "Delete a user using the `PATCH` method"
+description: "Partially update a user using the PATCH method"
 tags:
   - api
 categories:
   - api-reference
 version: "v1.0"
-last_updated: "2025-11-14"
+last_updated: "2025-11-17"
 ---
-## `PATCH`: delete a user
 
-Use the /users endpoint to delete an existing `user` using the `PATCH` method.
+## `PATCH`: partially update a user
+
+Use the /users endpoint to partially update an existing `user` using the `PATCH` method. `PATCH` only updates the fields included in the request body. All other fields remain unchanged.
 
 ## URL
 
@@ -24,11 +25,13 @@ Use the /users endpoint to delete an existing `user` using the `PATCH` method.
 {server_url}/users/{id}
 ```
 
+When testing, the {server_url} is the local host: <http://localhost:3000/users/{id}>
+
 ## Path parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | integer | Yes | The unique identifier of the user to delete |
+| `id` | integer | Yes | The unique identifier of the user to update |
 
 ## Request headers
 
@@ -38,13 +41,22 @@ Use the /users endpoint to delete an existing `user` using the `PATCH` method.
 
 ## Request body
 
-None required for delete operation.
+| Property name | Type | Required | Description |
+| ------------- | ----------- | ----------- | ----------- |
+| `last-name` | string | No | The last name of the user |
+| `first-name` | string | No | The first name of the user |
+| `email` | string | No | The email address of the user |
+
+> **Note:** Include only the fields you want to update. All fields are optional.
 
 ## Request syntax
 
 ```bash
-curl -X PATCH http://localhost:3000/users/{id} \
-  -H "Content-Type: application/json"
+curl -X PATCH "http://localhost:3000/users/{id}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "{property}": "{value}"
+  }'
 ```
 
 ## Response format
@@ -58,12 +70,7 @@ curl -X PATCH http://localhost:3000/users/{id} \
 
 ## Request example
 
-```bash
-curl -X PATCH http://localhost:3000/users/4 \
-  -H "Content-Type: application/json"
-```
-
-## Response example
+**Original Resource:**
 
 ```json
 {
@@ -74,10 +81,32 @@ curl -X PATCH http://localhost:3000/users/4 \
 }
 ```
 
+This example updates only the **email** field:
+
+```bash
+curl -X PATCH "http://localhost:3000/users/4" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "email": "robertplant@gmail.com"
+  }'
+```
+
+## Response example
+
+```json
+{
+  "id": 4,
+  "last-name": "Plan",
+  "first-name": "Robert",
+  "email": "robertplant@gmail.com"
+}
+```
+
 ## Return status
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 200 | Success | User deleted successfully |
+| 200 | Success | User updated successfully |
+| 400 | Error | Invalid request body |
 | 404 | Error | Specified user not found |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
