@@ -27,7 +27,7 @@ Placeholder, Add a sample rock rakers query and response.
 
 ## Note
 
-The Rock Rankers API is an educational project demonstrating REST API documentation for managing rock music rankings. It runs locally via JSON Server. See [Getting Started](#getting-started) for setup.
+The Rock Rankers API is an educational project demonstrating REST API documentation for managing rock music rankings. It runs locally via JSON Server. See [Getting Started](./Tutorials/rock-rankers%20environment%20set-up.md) for setup.
 
 ## Get started
 
@@ -49,19 +49,21 @@ Learn how to perform common rock-rankers tasks:
 
 ### API reference docs
 
- **View rock-rankers resource and endpoints**
+#### View rock-rankers resource and endpoints
 
 * [bands](./API/bands.md)
 * [albums](./API/albums.md)
 * [users](./API/users.md)
 
-**Edit the rock-rankers database**
+### Edit the rock-rankers database**
 
-* [`POST`: Create new records](./API/POST-a-record.md)  
-* `PUT`: Update existing records  
-* `DELETE`: Remove records  
+| **`POST`: create new records** | **`PUT`: update a record | **`PATCH`: update a record field |**`Delete`: delete a record |
+| ------------- | ----------- | ----------- | ----------- |
+| [`POST`: create a new band](./API/post-band.md) | [`PUT`: update a band](./API/put-band.md) | [`PATCH': update a band field](./API/patch-band.md) | [`DELETE`: delete a band](./API/delete-band.md)|
+| [`POST`: create a new album](./API/post-album.md) | [`PUT`: update an album](./API/put-album.md) | [`PATCH`: update an album field](./API/patch-album.md) | [`DELETE`: delete an album](./API/delete-album.md) |
+| [`POST`: create a new user](./API/post-user.md) | [`PUT`: update a user](./API/put-user.md)| [`PATCH`: update a user](./API/patch-user.md) | [`DELETE`: delete a user](./API/delete-user.md) |
   
-**View the rock-rankers repo and OpenAPI specification**
+### View the rock-rankers repo and OpenAPI specification
 
 * [rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
 * [View OpenAPI Specification](../api/rock-rankers-spec.yml)
