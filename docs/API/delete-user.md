@@ -77,14 +77,7 @@ curl -X DELETE "http://localhost:3000/users/4"
 
 ## Response example
 
-```json
-{
-  "id": 4,
-  "last-name": "Plan",
-  "first-name": "Robert",
-  "email": "robertplant@gmail.com"
-}
-```
+No response body returned.
 
 ## Return status
 

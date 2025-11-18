@@ -79,15 +79,7 @@ curl -X DELETE "http://localhost:3000/bands/5"
 
 ## Response example
 
-```json
-{
-  "id": 5,
-  "name": "Soundgarden",
-  "genre": "rock, alternative, grunge, metal",
-  "years-active": "1984-1997; 2010-2019",
-  "origin": "Seattle, Washington, USA"
-}
-```
+No response body returned.
 
 ## Return status
 

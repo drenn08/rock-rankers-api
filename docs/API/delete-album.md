@@ -83,17 +83,7 @@ curl -X DELETE "http://localhost:3000/albums/3"
 
 ## Response example
 
-```json
-{
-  "id": 3,
-  "name": "Soundgarden",
-  "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "950",
-  "global-album-ranking": "4",
-  "band-catalog-album-ranking": "1"
-}
-```
+No response body returned.
 
 ## Return status
 
