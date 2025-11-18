@@ -47,9 +47,9 @@ Learn how to perform common rock-rankers tasks:
 
  **View rock-rankers resource and endpoints**
 
-* [bands](../docs/API/bands.md)
-* [albums](../docs/API/albums.md)
-* [users](../docs/API/users.md)
+* [bands](./API/bands.md)
+* [albums](./API/albums.md)
+* [users](./API/users.md)
 
 **Edit the rock-rankers database**
 
