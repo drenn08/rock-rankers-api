@@ -1,37 +1,37 @@
 ---
-title: "PATCH: delete an album"
+title: "PATCH: partially update an album"
 layout: default
 nav_order: 3
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/albums/patch-album/
 has_toc: false
-description: "Delete an album using the `PATCH` method"
+description: "Partially update an album using the PATCH method"
 tags:
   - api
 categories:
   - api-reference
 version: "v1.0"
-last_updated: "2025-11-14"
+last_updated: "2025-11-17"
 ---
 
-## `PATCH`: delete an album
+## `PATCH`: partially update an album
 
-Use the /albums endpoint to delete an existing `album` using the `PATCH` method.
+Use the /albums endpoint to partially update an existing `album` using the `PATCH` method. `PATCH` only updates the fields included in the request body. All other fields remain unchanged.
 
 ## URL
 
 ```shell
-
-{server_url}/albums?name={name}&album={album}
+{server_url}/albums/{id}
 ```
 
-## Query parameters
+When testing, the {server_url} is the local host: <http://localhost:3000/albums/{id}>
+
+## Path parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `name` | string | Yes | The name of the band that created the album |
-| `album` | string | Yes | The name of the album to update |
+| `id` | integer | Yes | The unique identifier of the album to update |
 
 ## Request headers
 
@@ -50,18 +50,15 @@ Use the /albums endpoint to delete an existing `album` using the `PATCH` method.
 | `global-album-ranking` | string | No | The global ranking of the album |
 | `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
 
+> **Note:** Include only the fields you want to update. All fields are optional.
+
 ## Request syntax
 
 ```bash
-curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
+curl -X PATCH "http://localhost:3000/albums/{id}" \
   -H "Content-Type: application/json" \
   -d '{
-    "name": "{name}",
-    "album": "{album}",
-    "release-date": "{release-date}",
-    "album-score": "{album-score}",
-    "global-album-ranking": "{global-album-ranking}",
-    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
+    "{property}": "{value}"
   }'
 ```
 
@@ -69,6 +66,7 @@ curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
+| `id` | integer | Unique album identifier |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
 | `release-date` | string | The release date of the album |
@@ -78,8 +76,24 @@ curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
 
 ## Request example
 
+**Original Resource:**
+
+```json
+{
+  "id": 3,
+  "name": "Soundgarden",
+  "album": "Superunknown",
+  "release-date": "1994",
+  "album-score": "900",
+  "global-album-ranking": "5",
+  "band-catalog-album-ranking": "1"
+}
+```
+
+This example updates only the **album-score** and **global-album-ranking** fields:
+
 ```bash
-curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
+curl -X PATCH "http://localhost:3000/albums/3" \
   -H "Content-Type: application/json" \
   -d '{
     "album-score": "950",
@@ -91,6 +105,7 @@ curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
 
 ```json
 {
+  "id": 3,
   "name": "Soundgarden",
   "album": "Superunknown",
   "release-date": "1994",
@@ -107,5 +122,4 @@ curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
 | 200 | Success | Album updated successfully |
 | 400 | Error | Invalid request body |
 | 404 | Error | Specified album not found |
-| 409 | Error | Album with this name already exists for this band |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |
