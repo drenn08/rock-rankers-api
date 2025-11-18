@@ -64,21 +64,21 @@ Rock-rankers supports the following typical `HTTP` functions:
 **Bands**
 
 * [POST: create a new band](./API/post-band.md)
-* [PUT: update a band](./API/put-band.md)
+* [PUT: update an existing band](./API/put-band.md)
 * [PATCH: partially update a band](./API/patch-band.md)
 * [DELETE: delete a band](./API/delete-band.md)
 
 **Albums**
 
 * [POST: create a new album](./API/post-album.md)
-* [PUT: update an album](./API/put-album.md)
-* [PATCH: partially update a album](./API/patch-album.md)
+* [PUT: update an existing album](./API/put-album.md)
+* [PATCH: partially update an album](./API/patch-album.md)
 * [DELETE: delete an album](./API/delete-album.md)
 
 **Users**
 
 * [POST: create a new user](./API/post-user.md)
-* [PUT: update a user](./API/put-user.md)
+* [PUT: update an existing user](./API/put-user.md)
 * [PATCH: partially update a user](./API/patch-user.md)
 * [DELETE: delete a user](./API/delete-user.md)
   
