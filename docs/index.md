@@ -39,12 +39,6 @@ Follow this tutorial to learn how to do a one-time setup of your rock-rankers en
 
 Learn how to perform common rock-rankers tasks:
 
-* [`GET`: query the rock-rankers database](./Tutorials/query%20the%20rock-rankers%20database.md)
-* [add a new band](./Tutorials/add%20a%20new%20band.md)
-* [add a new abum](./Tutorials/add%20a%20new%20album.md)
-* [enroll a new user](./Tutorials/enroll%20a%20new%20user.md)
-* [edit the rock-rankers database](./Tutorials/edit%20the%20rock-rankers%20database.md)
-
 ## Learn more
 
 ### API reference docs
@@ -55,13 +49,34 @@ Learn how to perform common rock-rankers tasks:
 * [albums](./API/albums.md)
 * [users](./API/users.md)
 
-### Edit the rock-rankers database**
+### Edit the rock-rankers database
 
-| **`POST`: create new records** | **`PUT`: update a record | **`PATCH`: update a record field |**`Delete`: delete a record |
-| ------------- | ----------- | ----------- | ----------- |
-| [`POST`: create a new band](./API/post-band.md) | [`PUT`: update a band](./API/put-band.md) | [`PATCH': update a band field](./API/patch-band.md) | [`DELETE`: delete a band](./API/delete-band.md)|
-| [`POST`: create a new album](./API/post-album.md) | [`PUT`: update an album](./API/put-album.md) | [`PATCH`: update an album field](./API/patch-album.md) | [`DELETE`: delete an album](./API/delete-album.md) |
-| [`POST`: create a new user](./API/post-user.md) | [`PUT`: update a user](./API/put-user.md)| [`PATCH`: update a user](./API/patch-user.md) | [`DELETE`: delete a user](./API/delete-user.md) |
+| HTTP Method | Operation | Description |
+|-------------|-----------|-------------|
+| POST | Create | Create new records |
+| PUT | Update | Update an entire record |
+| PATCH | Update | Update specific record fields |
+| DELETE | Delete | Delete a record |
+
+### Endpoints by Resource
+
+**Bands**
+* [POST: create a new band](/rock-rankers-api/api-reference-docs/bands/post-band/)
+* [PUT: update a band](/rock-rankers-api/api-reference-docs/bands/put-band/)
+* [PATCH: update a band field](/rock-rankers-api/api-reference-docs/bands/patch-band/)
+* [DELETE: delete a band](/rock-rankers-api/api-reference-docs/bands/delete-band/)
+
+**Albums**
+* [POST: create a new album](/rock-rankers-api/api-reference-docs/albums/post-album/)
+* [PUT: update an album](/rock-rankers-api/api-reference-docs/albums/put-album/)
+* [PATCH: update an album field](/rock-rankers-api/api-reference-docs/albums/patch-album/)
+* [DELETE: delete an album](/rock-rankers-api/api-reference-docs/albums/delete-album/)
+
+**Users**
+* [POST: create a new user](/rock-rankers-api/api-reference-docs/users/post-user/)
+* [PUT: update a user](/rock-rankers-api/api-reference-docs/users/put-user/)
+* [PATCH: update a user](/rock-rankers-api/api-reference-docs/users/patch-user/)
+* [DELETE: delete a user](/rock-rankers-api/api-reference-docs/users/delete-user/)
   
 ### View the rock-rankers repo and OpenAPI specification
 
