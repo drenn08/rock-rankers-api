@@ -49,7 +49,7 @@ Learn how to perform common rock-rankers tasks:
 * [albums](./API/albums.md)
 * [users](./API/users.md)
 
-### Edit the rock-rankers database
+#### Edit the rock-rankers database
 
 | HTTP Method | Operation | Description |
 |-------------|-----------|-------------|
@@ -58,21 +58,22 @@ Learn how to perform common rock-rankers tasks:
 | PATCH | Update | Update specific record fields |
 | DELETE | Delete | Delete a record |
 
-### Endpoints by Resource
-
 **Bands**
+
 * [POST: create a new band](/rock-rankers-api/api-reference-docs/bands/post-band/)
 * [PUT: update a band](/rock-rankers-api/api-reference-docs/bands/put-band/)
 * [PATCH: update a band field](/rock-rankers-api/api-reference-docs/bands/patch-band/)
 * [DELETE: delete a band](/rock-rankers-api/api-reference-docs/bands/delete-band/)
 
 **Albums**
+
 * [POST: create a new album](/rock-rankers-api/api-reference-docs/albums/post-album/)
 * [PUT: update an album](/rock-rankers-api/api-reference-docs/albums/put-album/)
 * [PATCH: update an album field](/rock-rankers-api/api-reference-docs/albums/patch-album/)
 * [DELETE: delete an album](/rock-rankers-api/api-reference-docs/albums/delete-album/)
 
 **Users**
+
 * [POST: create a new user](/rock-rankers-api/api-reference-docs/users/post-user/)
 * [PUT: update a user](/rock-rankers-api/api-reference-docs/users/put-user/)
 * [PATCH: update a user](/rock-rankers-api/api-reference-docs/users/patch-user/)
