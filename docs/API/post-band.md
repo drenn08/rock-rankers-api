@@ -25,7 +25,7 @@ Use the /bands endpoint to create a new `band` using the `POST` method.
 {server_url}/bands
 ```
 
-When testing, the {server_url} is the local host: <http://localhost:3000/bands>
+- When testing, the {server_url} is the local host: <http://localhost:3000/bands>
 
 ### Path parameters
 

@@ -19,11 +19,15 @@ Welcome to Rock-rankers, the ultimate API for rock fans who love data as much as
 
 ## Who uses rock-rankers?
 
-Rock-rankers is for developers building apps and sites for rock fans who love to analyze and debate music.
+Rock-rankers is for developers building streaming apps and sites for rock fans who love to analyze and debate music.
 
 ## See rock-rankers in action
 
 Placeholder, Add a sample rock rakers query and response.
+
+## Note
+
+The Rock Rankers API is an educational project demonstrating REST API documentation for managing rock music rankings. It runs locally via JSON Server. See [Getting Started](#getting-started) for setup.
 
 ## Get started
 
