@@ -43,13 +43,14 @@ Learn how to perform common rock-rankers tasks:
 
 ### API reference docs
 
-#### View rock-rankers resource and endpoints
+ **View rock-rankers resource and endpoints**
 
 * [bands](./API/bands.md)
 * [albums](./API/albums.md)
 * [users](./API/users.md)
 
-#### Edit the rock-rankers database
+**Edit the rock-rankers database**  
+Rock-rankers supports the following typical `HTTP` functions:
 
 | HTTP Method | Operation | Description |
 |-------------|-----------|-------------|
@@ -57,6 +58,8 @@ Learn how to perform common rock-rankers tasks:
 | PUT | Update | Update an entire record |
 | PATCH | Update | Update specific record fields |
 | DELETE | Delete | Delete a record |
+
+**Endpoints by Resource**  
 
 **Bands**
 
