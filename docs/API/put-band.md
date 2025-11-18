@@ -1,5 +1,5 @@
 ---
-title: "PUT: update a band"
+title: "PUT: update an existing band"
 layout: default
 nav_order: 2
 parent: "Bands Resource"

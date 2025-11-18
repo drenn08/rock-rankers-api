@@ -1,5 +1,5 @@
 ---
-title: "PUT: update a user"
+title: "PUT: update an existing user"
 layout: default
 nav_order: 2
 parent: "Users Resource"

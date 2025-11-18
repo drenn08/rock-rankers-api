@@ -1,5 +1,5 @@
 ---
-title: "PUT: update an album"
+title: "PUT: update an existing album"
 layout: default
 nav_order: 2
 parent: "Albums Resource"
