@@ -12,7 +12,7 @@ tags:
 categories:
   - api-reference
 version: "v1.0"
-last_updated: "2025-11-11"
+last_updated: "2025-11-14"
 ---
 
 ## `albums` resource
@@ -37,10 +37,10 @@ Sample `albums` resource
 {
     "name": "The Beatles",
     "album": "Rubber Soul",
-    "release date": "1965",
-    "album score": "987",
-    "global album ranking": "1",
-    "band catalog album ranking": "1",
+    "release-date": "1965",
+    "album-score": "987",
+    "global-album-ranking": "1",
+    "band-catalog-album-ranking": "1",
     "id": 1
 }
 ```
@@ -49,10 +49,10 @@ Sample `albums` resource
 | ------------- | ----------- | ----------- |
 | `name` | string | The name of the [band](../API/bands.md) that released this album |
 | `album` | string | The album name |
-| `release date` | string | The album release date |
-| `album score` | string | The album's score |
-| `global album ranking` | string | The album's ranking across all albums |
-| `band catalog album ranking` | string | The album's ranking within the band's catalog |
+| `release-date` | string | The album release date |
+| `album-score` | string | The album's score |
+| `global-album-ranking` | string | The album's ranking across all albums |
+| `band-catalog-album-ranking` | string | The album's ranking within the band's catalog |
 | `id` | number | The album's unique record ID |
 
 ## Supported operations

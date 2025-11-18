@@ -21,7 +21,6 @@ Use the /albums endpoint to create a new `album` using the `POST` method.
 ### URL
 
 ```shell
-
 {server_url}/albums
 ```
 
@@ -37,10 +36,12 @@ Use the /albums endpoint to create a new `album` using the `POST` method.
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | Yes | The name of the band that created the album |
 | `album` | string | Yes | The name of the album |
-| `release date` | string | Yes | The release date of the album |
-| `album score` | string | Yes | The score rating of the album |
-| `global album ranking` | string | No | The global ranking of the album |
-| `band catalog album ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | string | Yes | The release date of the album |
+| `album-score` | string | Yes | The score rating of the album |
+| `global-album-ranking` | string | No | The global ranking of the album |
+| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
+
+**Note:** the server auto generates the `id` field. Don't include in the request.
 
 ### Request syntax
 
@@ -50,10 +51,10 @@ curl -X POST http://localhost:3000/albums \
   -d '{
     "name": "{name}",
     "album": "{album}",
-    "release date": "{release date}",
-    "album score": "{album score}",
-    "global album ranking": "{global album ranking}",
-    "band catalog album ranking": "{band catalog album ranking}"
+    "release-date": "{release-date}",
+    "album-score": "{album-score}",
+    "global-album-ranking": "{global-album-ranking}",
+    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
   }'
 ```
 
@@ -77,10 +78,10 @@ curl -X POST http://localhost:3000/albums \
   -d '{
     "name": "Soundgarden",
     "album": "Superunknown",
-    "release date": "1994",
-    "album score": "945",
-    "global album ranking": "5",
-    "band catalog album ranking": "1"
+    "release-date": "1994",
+    "album-score": "945",
+    "global-album-ranking": "5",
+    "band-catalog-album-ranking": "1"
   }'
 ```
 

@@ -17,20 +17,21 @@ last_updated: "2025-11-14"
 
 ## `PUT`: update an existing user
 
-Use the /users endpoint to update an existing `user` using the `PUT` method.
+Use the /users endpoint to update an existing `user` using the `PUT` method. Provide all fields, even if unchanged.
 
 ## URL
 
 ```shell
-
-{server_url}/users?id={id}
+{server_url}/users/{id}
 ```
 
-## Query parameters
+When testing, the {server_url} is the local host: <http://localhost:3000/users/{id}>
+
+## Path parameters
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | number | Yes | The unique record ID of the user to replace |
+| `id` | integer | Yes | The unique identifier of the user to update |
 
 ## Request headers
 
@@ -42,18 +43,18 @@ Use the /users endpoint to update an existing `user` using the `PUT` method.
 
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
-| `lastName` | string | Yes | The user's last name |
-| `firstName` | string | Yes | The user's first name |
+| `last-name` | string | Yes | The user's last name |
+| `first-name` | string | Yes | The user's first name |
 | `email` | string | Yes | The user's email address |
 
 ## Request syntax
 
 ```bash
-curl -X PUT http://localhost:3000/users?id={id} \
+curl -X PUT "http://localhost:3000/users/{id}" \
   -H "Content-Type: application/json" \
   -d '{
-    "lastName": "{lastName}",
-    "firstName": "{firstName}",
+    "last-name": "{last-name}",
+    "first-name": "{first-name}",
     "email": "{email}"
   }'
 ```
@@ -62,19 +63,32 @@ curl -X PUT http://localhost:3000/users?id={id} \
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `lastName` | string | The user's last name |
-| `firstName` | string | The user's first name |
+| `id` | integer | The user's unique identifier |
+| `last-name` | string | The user's last name |
+| `first-name` | string | The user's first name |
 | `email` | string | The user's email address |
-| `id` | number | The user's unique record ID |
 
 ## Request example
 
+**Original Resource:**
+
+```json
+{
+  "id": 1,
+  "last-name": "Renn",
+  "first-name": "David",
+  "email": "drenn08@uw.edu"
+}
+```
+
+This example updates the **email** address.
+
 ```bash
-curl -X PUT http://localhost:3000/users?id=1 \
+curl -X PUT "http://localhost:3000/users/1" \
   -H "Content-Type: application/json" \
   -d '{
-    "lastName": "Renn",
-    "firstName": "David",
+    "last-name": "Renn",
+    "first-name": "David",
     "email": "david.renn@uw.edu"
   }'
 ```
@@ -83,10 +97,10 @@ curl -X PUT http://localhost:3000/users?id=1 \
 
 ```json
 {
-  "lastName": "Renn",
-  "firstName": "David",
-  "email": "david.renn@uw.edu",
-  "id": 1
+  "id": 1,
+  "last-name": "Renn",
+  "first-name": "David",
+  "email": "david.renn@uw.edu"
 }
 ```
 
@@ -94,9 +108,7 @@ curl -X PUT http://localhost:3000/users?id=1 \
 
 | Status value | Return status | Description |
 | ------------- | ----------- | ----------- |
-| 200 | Success | User replaced successfully |
-| 201 | Success | User created successfully, if user didn't exist |
+| 200 | Success | User updated successfully |
 | 400 | Error | Invalid request body or missing required fields |
-| 404 | Error | Specified user record not found |
-| 409 | Error | User with this email already exists |
+| 404 | Error | Specified user not found |
 | ECONNREFUSED | N/A | Service is offline. Start the service and try again. |

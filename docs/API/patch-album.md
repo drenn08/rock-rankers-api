@@ -1,10 +1,10 @@
 ---
-title: "PATCH: delete a album"
+title: "PATCH: delete an album"
 layout: default
 nav_order: 3
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
-permalink: /api-reference-docs/bands/patch-album/
+permalink: /api-reference-docs/albums/patch-album/
 has_toc: false
 description: "Delete an album using the `PATCH` method"
 tags:
@@ -45,10 +45,10 @@ Use the /albums endpoint to delete an existing `album` using the `PATCH` method.
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | No | The name of the band that created the album |
 | `album` | string | No | The name of the album |
-| `release date` | string | No | The release date of the album |
-| `album score` | string | No | The score rating of the album |
-| `global album ranking` | string | No | The global ranking of the album |
-| `band catalog album ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | string | No | The release date of the album |
+| `album-score` | string | No | The score rating of the album |
+| `global-album-ranking` | string | No | The global ranking of the album |
+| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
 
 ## Request syntax
 
@@ -58,10 +58,10 @@ curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
   -d '{
     "name": "{name}",
     "album": "{album}",
-    "release date": "{release date}",
-    "album score": "{album score}",
-    "global album ranking": "{global album ranking}",
-    "band catalog album ranking": "{band catalog album ranking}"
+    "release-date": "{release-date}",
+    "album-score": "{album-score}",
+    "global-album-ranking": "{global-album-ranking}",
+    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
   }'
 ```
 
@@ -71,10 +71,10 @@ curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
 | ------------- | ----------- | ----------- |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release date` | string | The release date of the album |
-| `album score` | string | The score rating of the album |
-| `global album ranking` | string | The global ranking of the album |
-| `band catalog album ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | string | The release date of the album |
+| `album-score` | string | The score rating of the album |
+| `global-album-ranking` | string | The global ranking of the album |
+| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
 
 ## Request example
 
@@ -82,8 +82,8 @@ curl -X PATCH http://localhost:3000/albums?name={name}&album={album} \
 curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
   -H "Content-Type: application/json" \
   -d '{
-    "album score": "950",
-    "global album ranking": "4"
+    "album-score": "950",
+    "global-album-ranking": "4"
   }'
 ```
 
@@ -93,10 +93,10 @@ curl -X PATCH http://localhost:3000/albums?name=Soundgarden&album=Superunknown \
 {
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release date": "1994",
-  "album score": "950",
-  "global album ranking": "4",
-  "band catalog album ranking": "1"
+  "release-date": "1994",
+  "album-score": "950",
+  "global-album-ranking": "4",
+  "band-catalog-album-ranking": "1"
 }
 ```
 

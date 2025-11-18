@@ -43,8 +43,8 @@ Use the /bands endpoint to delete an existing `band` using the `PATCH` method.
 | Property name | Type | Required | Description |
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | No | band name |
-| `genre` | string | No | band |
-| `years active` | string | No | The years the band was/is active |
+| `genre` | string | No | band genre |
+| `years-active` | string | No | The years the band was/is active |
 | `origin` | string | No | The origin location of the band |
 
 ## Request syntax
@@ -55,7 +55,7 @@ curl -X PATCH http://localhost:3000/bands?name={name} \
   -d '{
     "name": "{name}",
     "genre": "{genre}",
-    "years active": "{years active}",
+    "years-active": "{years-active}",
     "origin": "{origin}"
   }'
 ```
@@ -66,7 +66,7 @@ curl -X PATCH http://localhost:3000/bands?name={name} \
 | ------------- | ----------- | ----------- |
 | `name` | string | band name|
 | `genre` | string | band genre |
-| `years active` | string | The years the band was/is active |
+| `years-active` | string | The years the band was/is active |
 | `origin` | string | The origin location of the band |
 
 ## Request example
@@ -85,7 +85,7 @@ curl -X PATCH http://localhost:3000/bands?name=Soundgarden \
 {
   "name": "Soundgarden",
   "genre": "rock, alternative, grunge, metal",
-  "years active": "1984-1997; 2010-2019",
+  "years-active": "1984-1997; 2010-2019",
   "origin": "Seattle, Washington, USA"
 }
 ```
