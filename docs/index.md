@@ -7,7 +7,7 @@ permalink: /
 ---
 ## Rock-rankers API
 
-**Where music meets metrics**
+### Where music meets metrics
 
 Welcome to Rock-rankers, the ultimate API for rock fans who love data as much as they love music.
 
