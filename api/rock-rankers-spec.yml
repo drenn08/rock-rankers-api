@@ -12,6 +12,17 @@ servers:
   - url: http://localhost:3000
     description: Local server for testing. Often, this is the development server.
 
+tags:
+  - name: Users
+    description: User management endpoints that provide operations for managing user accounts.
+  - name: Bands
+    description: Band management endpoints that provide operations for managing rock bands.
+  - name: Albums
+    description: Album management endpoints that provide operations for managing rock albums.
+
+security:
+  - bearerAuth: []
+
 paths:
   /users:
     get:
@@ -135,7 +146,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/UserIdPathParam'
       responses:
-        '204':
+        '200':
           $ref: '#/components/responses/SuccessDeleteOneUser'
         '400':
           $ref: '#/components/responses/BadRequest'
@@ -150,7 +161,7 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 
- /bands:
+  /bands:
     get:
       summary: Get all bands
       description: Returns a list of all bands in the system. Supports pagination and sorting.
@@ -189,7 +200,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BandInput'
             examples:
-              newUser:
+              newBand:
                 $ref: '#/components/examples/NewBand'
       responses:
         '201':
@@ -245,7 +256,7 @@ paths:
             schema:
               $ref: '#/components/schemas/BandPatch'
             examples:
-              userPatch:
+              bandPatch:
                 $ref: '#/components/examples/BandPatch'
       responses:
         '200':
@@ -270,9 +281,9 @@ paths:
         - Bands
       operationId: deleteOneBand
       parameters:
-        - $ref: '#/components/parameters/bandIdPathParam'
+        - $ref: '#/components/parameters/BandIdPathParam'
       responses:
-        '204':
+        '200':
           $ref: '#/components/responses/SuccessDeleteOneBand'
         '400':
           $ref: '#/components/responses/BadRequest'
@@ -287,12 +298,12 @@ paths:
         '500':
           $ref: '#/components/responses/ServerError'
 
-/albums:
+  /albums:
     get:
       summary: Get all albums
       description: Returns a list of all albums in the system. Supports pagination and sorting.
       tags:
-        - Users
+        - Albums
       operationId: getAllAlbums
       parameters:
         - $ref: '#/components/parameters/PaginationPageParam'
@@ -326,7 +337,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AlbumInput'
             examples:
-              newUser:
+              newAlbum:
                 $ref: '#/components/examples/NewAlbum'
       responses:
         '201':
@@ -345,7 +356,7 @@ paths:
   /albums/{id}:
     get:
       summary: Get an album by ID
-      description: Returns a single album based on their unique `id`.
+      description: Returns a single album based on its unique `id`.
       tags:
         - Albums
       operationId: getOneAlbum
@@ -382,7 +393,7 @@ paths:
             schema:
               $ref: '#/components/schemas/AlbumPatch'
             examples:
-              userPatch:
+              albumPatch:
                 $ref: '#/components/examples/AlbumPatch'
       responses:
         '200':
@@ -409,7 +420,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/AlbumIdPathParam'
       responses:
-        '204':
+        '200':
           $ref: '#/components/responses/SuccessDeleteOneAlbum'
         '400':
           $ref: '#/components/responses/BadRequest'
@@ -423,4 +434,817 @@ paths:
           $ref: '#/components/responses/TooManyRequests'
         '500':
           $ref: '#/components/responses/ServerError'
+
+components:
+  parameters:
+    PaginationPageParam:
+      name: _page
+      in: query
+      description: Page number for paginated results (zero-indexed).
+      schema:
+        type: integer
+        minimum: 0
+        default: 0
+      examples:
+        default:
+          value: 0
+          summary: First page
+
+    PaginationPerPageParam:
+      name: _perPage
+      in: query
+      description: Number of items per page (maximum 100).
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+        default: 20
+      examples:
+        default:
+          value: 20
+          summary: Default page size
+
+    SortParam:
+      name: _sort
+      in: query
+      description: Field to sort by, prefixed with `-` to indicate descending order.
+      schema:
+        type: string
+      examples:
+        ascendingByName:
+          value: "name"
+          summary: Sort by name ascending
+        descendingByScore:
+          value: "-album-score"
+          summary: Sort by album score descending
+
+    UserIdPathParam:
+      name: id
+      in: path
+      required: true
+      description: The unique `id` of the `user` resource to retrieve.
+      schema:
+        type: integer
+
+    BandIdPathParam:
+      name: id
+      in: path
+      required: true
+      description: The unique `id` of the `band` resource to retrieve.
+      schema:
+        type: integer
+
+    AlbumIdPathParam:
+      name: id
+      in: path
+      required: true
+      description: The unique `id` of the `album` resource to retrieve.
+      schema:
+        type: integer
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/UserId'
+        last-name:
+          $ref: '#/components/schemas/LastName'
+        first-name:
+          $ref: '#/components/schemas/FirstName'
+        email:
+          $ref: '#/components/schemas/ContactEmail'
+      required:
+        - id
+        - last-name
+        - first-name
+        - email
+      description: Represents a user in the Rock Rankers system with unique ID, name, and contact email.
+
+    UserInput:
+      type: object
+      properties:
+        last-name:
+          $ref: '#/components/schemas/LastName'
+        first-name:
+          $ref: '#/components/schemas/FirstName'
+        email:
+          $ref: '#/components/schemas/ContactEmail'
+      required:
+        - last-name
+        - first-name
+        - email
+      description: Contains the data needed to create a new user.
+        The `POST /users` operation uses this schema for the request body.
+        The API ensures a unique `email` value and generates a unique `id` for the new user.
+
+    UserPatch:
+      type: object
+      properties:
+        last-name:
+          $ref: '#/components/schemas/LastName'
+        first-name:
+          $ref: '#/components/schemas/FirstName'
+        email:
+          $ref: '#/components/schemas/ContactEmail'
+      minProperties: 1
+      description: Contains the data you can update for an existing user.
+        The `PATCH /users/{id}` operation uses this schema for partial updates.
+
+    Band:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/BandId'
+        name:
+          $ref: '#/components/schemas/BandName'
+        genre:
+          $ref: '#/components/schemas/Genre'
+        years-active:
+          $ref: '#/components/schemas/YearsActive'
+        origin:
+          $ref: '#/components/schemas/Origin'
+      required:
+        - id
+        - name
+        - genre
+        - years-active
+        - origin
+      description: Represents a band with unique ID, name, genre, years active, and origin location.
+
+    BandInput:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/BandName'
+        genre:
+          $ref: '#/components/schemas/Genre'
+        years-active:
+          $ref: '#/components/schemas/YearsActive'
+        origin:
+          $ref: '#/components/schemas/Origin'
+      required:
+        - name
+        - genre
+        - years-active
+        - origin
+      description: Contains the data needed to create a new band.
+        The `POST /bands` operation uses this schema for the request body.
+
+    BandPatch:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/BandName'
+        genre:
+          $ref: '#/components/schemas/Genre'
+        years-active:
+          $ref: '#/components/schemas/YearsActive'
+        origin:
+          $ref: '#/components/schemas/Origin'
+      minProperties: 1
+      description: Contains the data you can update for an existing band.
+        The `PATCH /bands/{id}` operation uses this schema for partial updates.
+
+    Album:
+      type: object
+      properties:
+        id:
+          $ref: '#/components/schemas/AlbumId'
+        name:
+          $ref: '#/components/schemas/BandName'
+        album:
+          $ref: '#/components/schemas/AlbumName'
+        release-date:
+          $ref: '#/components/schemas/ReleaseDate'
+        album-score:
+          $ref: '#/components/schemas/AlbumScore'
+        global-album-ranking:
+          $ref: '#/components/schemas/GlobalAlbumRanking'
+        band-catalog-album-ranking:
+          $ref: '#/components/schemas/BandCatalogAlbumRanking'
+      required:
+        - id
+        - name
+        - album
+        - release-date
+        - album-score
+      description: Represents an album with unique ID, band name, album name, release date, score, and rankings.
+
+    AlbumInput:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/BandName'
+        album:
+          $ref: '#/components/schemas/AlbumName'
+        release-date:
+          $ref: '#/components/schemas/ReleaseDate'
+        album-score:
+          $ref: '#/components/schemas/AlbumScore'
+        global-album-ranking:
+          $ref: '#/components/schemas/GlobalAlbumRanking'
+        band-catalog-album-ranking:
+          $ref: '#/components/schemas/BandCatalogAlbumRanking'
+      required:
+        - name
+        - album
+        - release-date
+        - album-score
+      description: Contains the data needed to create a new album.
+        The `POST /albums` operation uses this schema for the request body.
+
+    AlbumPatch:
+      type: object
+      properties:
+        name:
+          $ref: '#/components/schemas/BandName'
+        album:
+          $ref: '#/components/schemas/AlbumName'
+        release-date:
+          $ref: '#/components/schemas/ReleaseDate'
+        album-score:
+          $ref: '#/components/schemas/AlbumScore'
+        global-album-ranking:
+          $ref: '#/components/schemas/GlobalAlbumRanking'
+        band-catalog-album-ranking:
+          $ref: '#/components/schemas/BandCatalogAlbumRanking'
+      minProperties: 1
+      description: Contains the data you can update for an existing album.
+        The `PATCH /albums/{id}` operation uses this schema for partial updates.
+
+    Error:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          $ref: '#/components/schemas/ErrorCode'
+        message:
+          $ref: '#/components/schemas/ErrorMessage'
+        details:
+          type: array
+          description: Additional error details when available.
+          items:
+            type: object
+            properties:
+              field:
+                type: string
+                description: The field that caused the error.
+              reason:
+                type: string
+                description: Specific reason for the error.
+              location:
+                type: string
+                description: Where the error occurred (query, path, body).
+        requestId:
+          $ref: '#/components/schemas/RequestId'
+      description: Describes the structure of an error response.
+
+    ErrorCode:
+      type: string
+      description: Error code that identifies the type of error.
+
+    ErrorMessage:
+      type: string
+      description: Human-readable error message.
+
+    RequestId:
+      type: string
+      description: Request identifier for troubleshooting.
+
+    UserId:
+      description: The unique ID of the user's account.
+      type: integer
+
+    LastName:
+      description: The user's last name.
+      type: string
+      minLength: 1
+      maxLength: 100
+
+    FirstName:
+      description: The user's first name.
+      type: string
+      minLength: 1
+      maxLength: 100
+
+    ContactEmail:
+      description: The user's email address.
+      type: string
+      pattern: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+      maxLength: 255
+      minLength: 3
+      format: email
+
+    BandId:
+      description: The system-defined, unique ID that identifies the band.
+      type: integer
+      minimum: 1
+
+    BandName:
+      description: The band's name.
+      type: string
+      minLength: 1
+      maxLength: 100
+
+    Genre:
+      description: The band's genre, comma-separated.
+      type: string
+      minLength: 1
+      maxLength: 200
+
+    YearsActive:
+      description: The years the band was/is active.
+      type: string
+      minLength: 1
+      maxLength: 100
+
+    Origin:
+      description: The band's place of origin.
+      type: string
+      minLength: 1
+      maxLength: 200
+
+    AlbumId:
+      description: The system-defined, unique ID that identifies the album.
+      type: integer
+      minimum: 1
+
+    AlbumName:
+      description: The album name.
+      type: string
+      minLength: 1
+      maxLength: 200
+
+    ReleaseDate:
+      description: The album release year.
+      type: integer
+      minimum: 1900
+      maximum: 2100
+
+    AlbumScore:
+      description: The album's score rating.
+      type: integer
+      minimum: 0
+      maximum: 1000
+
+    GlobalAlbumRanking:
+      description: The album's ranking across all albums.
+      type: integer
+      minimum: 1
+
+    BandCatalogAlbumRanking:
+      description: The album's ranking within the band's catalog.
+      type: integer
+      minimum: 1
+
+  responses:
+    SuccessGetAllUsers:
+      description: Successful response that returns a list of users.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/User'
+          examples:
+            usersList:
+              $ref: '#/components/examples/UsersList'
+
+    SuccessGetOneUser:
+      description: Successful response that returns a single user.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+          examples:
+            singleUser:
+              $ref: '#/components/examples/SingleUser'
+
+    SuccessPostOneUser:
+      description: Successful response that returns the newly created user.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+          examples:
+            createdUser:
+              $ref: '#/components/examples/CreatedUser'
+
+    SuccessPatchOneUser:
+      description: Successful response that returns the updated user.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/User'
+          examples:
+            updatedUser:
+              $ref: '#/components/examples/UpdatedUser'
+
+    SuccessDeleteOneUser:
+      description: Successful response confirming user deletion.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          examples:
+            default:
+              value:
+                message: "User deleted successfully"
+
+    SuccessGetAllBands:
+      description: Successful response that returns a list of bands.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Band'
+          examples:
+            bandsList:
+              $ref: '#/components/examples/BandsList'
+
+    SuccessGetOneBand:
+      description: Successful response that returns a single band.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Band'
+          examples:
+            singleBand:
+              $ref: '#/components/examples/SingleBand'
+
+    SuccessPostOneBand:
+      description: Successful response that returns the newly created band.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Band'
+          examples:
+            createdBand:
+              $ref: '#/components/examples/CreatedBand'
+
+    SuccessPatchOneBand:
+      description: Successful response that returns the updated band.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Band'
+          examples:
+            updatedBand:
+              $ref: '#/components/examples/UpdatedBand'
+
+    SuccessDeleteOneBand:
+      description: Successful response confirming band deletion.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          examples:
+            default:
+              value:
+                message: "Band deleted successfully"
+
+    SuccessGetAllAlbums:
+      description: Successful response that returns a list of albums.
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/Album'
+          examples:
+            albumsList:
+              $ref: '#/components/examples/AlbumsList'
+
+    SuccessGetOneAlbum:
+      description: Successful response that returns a single album.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Album'
+          examples:
+            singleAlbum:
+              $ref: '#/components/examples/SingleAlbum'
+
+    SuccessPostOneAlbum:
+      description: Successful response that returns the newly created album.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Album'
+          examples:
+            createdAlbum:
+              $ref: '#/components/examples/CreatedAlbum'
+
+    SuccessPatchOneAlbum:
+      description: Successful response that returns the updated album.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Album'
+          examples:
+            updatedAlbum:
+              $ref: '#/components/examples/UpdatedAlbum'
+
+    SuccessDeleteOneAlbum:
+      description: Successful response confirming album deletion.
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+          examples:
+            default:
+              value:
+                message: "Album deleted successfully"
+
+    BadRequest:
+      description: The request was malformed or contains invalid parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            invalidParameter:
+              summary: Invalid parameter
+              value:
+                code: "INVALID_FIELD"
+                message: "The field `email` must be a valid email address"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+    Unauthorized:
+      description: Authentication is required or the provided credentials are invalid.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                code: "UNAUTHORIZED"
+                message: "Authentication is required to access this resource"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+    Forbidden:
+      description: The authenticated user does not have permission to access the requested resource.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                code: "FORBIDDEN"
+                message: "You do not have permission to access this resource"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+    NotFound:
+      description: The requested resource was not found.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                code: "RESOURCE_NOT_FOUND"
+                message: "The requested resource could not be found"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+    TooManyRequests:
+      description: The client has sent too many requests in a given amount of time.
+      headers:
+        Retry-After:
+          schema:
+            type: integer
+          description: Number of seconds to wait before making a new request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                code: "RATE_LIMIT_EXCEEDED"
+                message: "Rate limit exceeded. Try again in 30 seconds"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+    ServerError:
+      description: An unexpected server error occurred.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          examples:
+            default:
+              value:
+                code: "SERVER_ERROR"
+                message: "An unexpected error occurred. Please try again later"
+                requestId: "req-f8d31a62-e789-4856-9452-5efa50223c7a"
+
+  examples:
+    UsersList:
+      summary: List of users
+      value:
+        - id: 1
+          last-name: "Renn"
+          first-name: "David"
+          email: "drenn08@uw.edu"
+        - id: 2
+          last-name: "D"
+          first-name: "Gill"
+          email: "gilld@uw.edu"
+        - id: 3
+          last-name: "Watson"
+          first-name: "Bob"
+          email: "bobwatson@uw.edu"
+        - id: 4
+          last-name: "Plan"
+          first-name: "Robert"
+          email: "ledzeppelin@aol.com"
+
+    NewUser:
+      summary: Example of new user data
+      value:
+        last-name: "Meere"
+        first-name: "John"
+        email: "johnm@gmail.com"
+
+    CreatedUser:
+      summary: Example of newly created user
+      value:
+        id: 5
+        last-name: "Meere"
+        first-name: "John"
+        email: "johnm@gmail.com"
+
+    SingleUser:
+      summary: Example of a single user
+      value:
+        id: 1
+        last-name: "Renn"
+        first-name: "David"
+        email: "drenn08@uw.edu"
+
+    UserPatch:
+      summary: Example of user patch data
+      value:
+        email: "david.renn@uw.edu"
+
+    UpdatedUser:
+      summary: Example of updated user
+      value:
+        id: 1
+        last-name: "Renn"
+        first-name: "David"
+        email: "david.renn@uw.edu"
+
+    BandsList:
+      summary: List of bands
+      value:
+        - id: 1
+          name: "The Beatles"
+          genre: "rock, pop, psychedelia"
+          years-active: "1960-1970"
+          origin: "Liverpool, England"
+        - id: 2
+          name: "Led Zeppelin"
+          genre: "rock, blues, folk, metal"
+          years-active: "1968-1980"
+          origin: "London, England"
+        - id: 3
+          name: "Radiohead"
+          genre: "rock, alternative, electronica"
+          years-active: "1985-present"
+          origin: "Abingdon, Oxfordshire, England"
+
+    NewBand:
+      summary: Example of new band data
+      value:
+        name: "Soundgarden"
+        genre: "rock, alternative, grunge"
+        years-active: "1984-1997; 2010-2017"
+        origin: "Seattle, Washington, USA"
+
+    CreatedBand:
+      summary: Example of newly created band
+      value:
+        id: 5
+        name: "Soundgarden"
+        genre: "rock, alternative, grunge"
+        years-active: "1984-1997; 2010-2017"
+        origin: "Seattle, Washington, USA"
+
+    SingleBand:
+      summary: Example of a single band
+      value:
+        id: 1
+        name: "The Beatles"
+        genre: "rock, pop, psychedelia"
+        years-active: "1960-1970"
+        origin: "Liverpool, England"
+
+    BandPatch:
+      summary: Example of band patch data
+      value:
+        genre: "rock, pop"
+
+    UpdatedBand:
+      summary: Example of updated band
+      value:
+        id: 1
+        name: "The Beatles"
+        genre: "rock, pop"
+        years-active: "1960-1970"
+        origin: "Liverpool, England"
+
+    AlbumsList:
+      summary: List of albums
+      value:
+        - id: 1
+          name: "The Beatles"
+          album: "Rubber Soul"
+          release-date: 1965
+          album-score: 987
+          global-album-ranking: 1
+          band-catalog-album-ranking: 1
+        - id: 2
+          name: "Led Zeppelin"
+          album: "Led Zeppelin I"
+          release-date: 1969
+          album-score: 961
+          global-album-ranking: 2
+          band-catalog-album-ranking: 1
+        - id: 3
+          name: "Radiohead"
+          album: "Ok Computer"
+          release-date: 1997
+          album-score: 955
+          global-album-ranking: 3
+          band-catalog-album-ranking: 1
+
+    NewAlbum:
+      summary: Example of new album data
+      value:
+        name: "Soundgarden"
+        album: "Superunknown"
+        release-date: 1994
+        album-score: 945
+        global-album-ranking: 5
+        band-catalog-album-ranking: 1
+
+    CreatedAlbum:
+      summary: Example of newly created album
+      value:
+        id: 5
+        name: "Soundgarden"
+        album: "Superunknown"
+        release-date: 1994
+        album-score: 945
+        global-album-ranking: 5
+        band-catalog-album-ranking: 1
+
+    SingleAlbum:
+      summary: Example of a single album
+      value:
+        id: 1
+        name: "The Beatles"
+        album: "Rubber Soul"
+        release-date: 1965
+        album-score: 987
+        global-album-ranking: 1
+        band-catalog-album-ranking: 1
+
+    AlbumPatch:
+      summary: Example of album patch data
+      value:
+        album-score: 990
+        global-album-ranking: 1
+
+    UpdatedAlbum:
+      summary: Example of updated album
+      value:
+        id: 1
+        name: "The Beatles"
+        album: "Rubber Soul"
+        release-date: 1965
+        album-score: 990
+        global-album-ranking: 1
+        band-catalog-album-ranking: 1
 
