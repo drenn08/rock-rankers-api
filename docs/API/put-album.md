@@ -45,10 +45,10 @@ When testing, the {server_url} is the local host: <http://localhost:3000/albums/
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | Yes | The name of the band that created the album |
 | `album` | string | Yes | The name of the album |
-| `release-date` | string | Yes | The release date of the album |
-| `album-score` | string | Yes | The score rating of the album |
-| `global-album-ranking` | string | No | The global ranking of the album |
-| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | integer | Yes | The release year of the album |
+| `album-score` | integer | Yes | The score rating of the album |
+| `global-album-ranking` | integer | No | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | No | The ranking of the album within the band's catalog |
 
 ## Request syntax
 
@@ -58,10 +58,10 @@ curl -X PUT "http://localhost:3000/albums/{id}" \
   -d '{
     "name": "{name}",
     "album": "{album}",
-    "release-date": "{release-date}",
-    "album-score": "{album-score}",
-    "global-album-ranking": "{global-album-ranking}",
-    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
+    "release-date": {release-date},
+    "album-score": {album-score},
+    "global-album-ranking": {global-album-ranking},
+    "band-catalog-album-ranking": {band-catalog-album-ranking}
   }'
 ```
 
@@ -72,10 +72,10 @@ curl -X PUT "http://localhost:3000/albums/{id}" \
 | `id` | integer | Unique album identifier |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release-date` | string | The release date of the album |
-| `album-score` | string | The score rating of the album |
-| `global-album-ranking` | string | The global ranking of the album |
-| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | integer | The release year of the album |
+| `album-score` | integer | The score rating of the album |
+| `global-album-ranking` | integer | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | The ranking of the album within the band's catalog |
 
 ## Request example
 
@@ -86,10 +86,10 @@ curl -X PUT "http://localhost:3000/albums/{id}" \
   "id": 5,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "945",
-  "global-album-ranking": "5",
-  "band-catalog-album-ranking": "1"
+  "release-date": 1994,
+  "album-score": 945,
+  "global-album-ranking": 5,
+  "band-catalog-album-ranking": 1
 }
 ```
 
@@ -101,10 +101,10 @@ curl -X PUT "http://localhost:3000/albums/5" \
   -d '{
     "name": "Soundgarden",
     "album": "Superunknown",
-    "release-date": "1994",
-    "album-score": "950",
-    "global-album-ranking": "4",
-    "band-catalog-album-ranking": "1"
+    "release-date": 1994,
+    "album-score": 950,
+    "global-album-ranking": 4,
+    "band-catalog-album-ranking": 1
   }'
 ```
 
@@ -115,10 +115,10 @@ curl -X PUT "http://localhost:3000/albums/5" \
   "id": 5,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "950",
-  "global-album-ranking": "4",
-  "band-catalog-album-ranking": "1"
+  "release-date": 1994,
+  "album-score": 950,
+  "global-album-ranking": 4,
+  "band-catalog-album-ranking": 1
 }
 ```
 

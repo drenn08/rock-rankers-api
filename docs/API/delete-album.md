@@ -54,10 +54,10 @@ curl -X DELETE "http://localhost:3000/albums/{id}"
 | `id` | integer | Unique album identifier |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release-date` | string | The release date of the album |
-| `album-score` | string | The score rating of the album |
-| `global-album-ranking` | string | The global ranking of the album |
-| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | integer | The release year of the album |
+| `album-score` | integer | The score rating of the album |
+| `global-album-ranking` | integer | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | The ranking of the album within the band's catalog |
 
 ## Request example
 
@@ -68,10 +68,10 @@ curl -X DELETE "http://localhost:3000/albums/{id}"
   "id": 3,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "950",
-  "global-album-ranking": "4",
-  "band-catalog-album-ranking": "1"
+  "release-date": 1994,
+  "album-score": 950,
+  "global-album-ranking": 4,
+  "band-catalog-album-ranking": 1
 }
 ```
 
