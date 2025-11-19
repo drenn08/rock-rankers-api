@@ -45,10 +45,10 @@ When testing, the {server_url} is the local host: <http://localhost:3000/albums/
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | No | The name of the band that created the album |
 | `album` | string | No | The name of the album |
-| `release-date` | string | No | The release date of the album |
-| `album-score` | string | No | The score rating of the album |
-| `global-album-ranking` | string | No | The global ranking of the album |
-| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | integer | No | The release year of the album |
+| `album-score` | integer | No | The score rating of the album |
+| `global-album-ranking` | integer | No | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | No | The ranking of the album within the band's catalog |
 
 > **Note:** Include only the fields you want to update. All fields are optional.
 
@@ -58,7 +58,7 @@ When testing, the {server_url} is the local host: <http://localhost:3000/albums/
 curl -X PATCH "http://localhost:3000/albums/{id}" \
   -H "Content-Type: application/json" \
   -d '{
-    "{property}": "{value}"
+    "{property}": {value}
   }'
 ```
 
@@ -69,10 +69,10 @@ curl -X PATCH "http://localhost:3000/albums/{id}" \
 | `id` | integer | Unique album identifier |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release-date` | string | The release date of the album |
-| `album-score` | string | The score rating of the album |
-| `global-album-ranking` | string | The global ranking of the album |
-| `band-catalog-album-ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | integer | The release year of the album |
+| `album-score` | integer | The score rating of the album |
+| `global-album-ranking` | integer | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | The ranking of the album within the band's catalog |
 
 ## Request example
 
@@ -83,10 +83,10 @@ curl -X PATCH "http://localhost:3000/albums/{id}" \
   "id": 3,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "900",
-  "global-album-ranking": "5",
-  "band-catalog-album-ranking": "1"
+  "release-date": 1994,
+  "album-score": 900,
+  "global-album-ranking": 5,
+  "band-catalog-album-ranking": 1
 }
 ```
 
@@ -96,8 +96,8 @@ This example updates only the **album-score** and **global-album-ranking** field
 curl -X PATCH "http://localhost:3000/albums/3" \
   -H "Content-Type: application/json" \
   -d '{
-    "album-score": "950",
-    "global-album-ranking": "4"
+    "album-score": 950,
+    "global-album-ranking": 4
   }'
 ```
 
@@ -108,10 +108,10 @@ curl -X PATCH "http://localhost:3000/albums/3" \
   "id": 3,
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release-date": "1994",
-  "album-score": "950",
-  "global-album-ranking": "4",
-  "band-catalog-album-ranking": "1"
+  "release-date": 1994,
+  "album-score": 950,
+  "global-album-ranking": 4,
+  "band-catalog-album-ranking": 1
 }
 ```
 

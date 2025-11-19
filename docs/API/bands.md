@@ -20,20 +20,18 @@ last_updated: "2025-11-14"
 Base endpoint:
 
 ```shell
-
 {server_url}/bands
 ```
 
-Contains information about the bands in the Rock Rankers service.
+Provides information about bands in the Rock Rankers service.
 
-A band resource describes musical bands and their information. Each band can have many [albums](../API/albums.md) associated with it. [Users](../API/users.md) can explore and rank bands in the rock-rankers service.
+A band resource describes musical bands and their information. Each band can have many [albums](./albums.md) associated with it. [Users](./users.md) can explore and rank bands in the Rock Rankers service.
 
 ## Resource properties
 
 Sample `bands` resource
 
 ```js
-
 {
     "name": "The Beatles",
     "genre": "rock, pop, psychedelia",
@@ -49,17 +47,17 @@ Sample `bands` resource
 | `genre` | string | The band's genre, comma-separated |
 | `years-active` | string | The years the band was active |
 | `origin` | string | The band's place of origin |
-| `id` | number | The band's unique record ID |
+| `id` | integer | The band's unique record ID |
 
 ## Supported operations
 
 * `GET`
-* [`POST: create a new band`](../API/post-band.md)
-* `PUT`
-* `PATCH`
+* [`POST`: create a new band](./post-band.md)
+* [`PUT`: update an existing band](./put-band.md)
+* [`PATCH`: partially update a band](./patch-band.md)
+* [`DELETE`: delete a band](./delete-band.md)
 
 ## Related resources
 
-* [Album resource](../API/albums.md) - Albums released by this band
-* [User resource](../API/users.md) - Users who can view and interact
-with the bands.
+* [albums resource](./albums.md) - Albums released by this band
+* [users resource](./users.md) - Users who can view and interact with the bands

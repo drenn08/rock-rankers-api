@@ -36,10 +36,10 @@ Use the /albums endpoint to create a new `album` using the `POST` method.
 | ------------- | ----------- | ----------- | ----------- |
 | `name` | string | Yes | The name of the band that created the album |
 | `album` | string | Yes | The name of the album |
-| `release-date` | string | Yes | The release date of the album |
-| `album-score` | string | Yes | The score rating of the album |
-| `global-album-ranking` | string | No | The global ranking of the album |
-| `band-catalog-album-ranking` | string | No | The ranking of the album within the band's catalog |
+| `release-date` | integer | Yes | The release year of the album |
+| `album-score` | integer | Yes | The score rating of the album |
+| `global-album-ranking` | integer | No | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | No | The ranking of the album within the band's catalog |
 
 **Note:** the server auto generates the `id` field. Don't include in the request.
 
@@ -51,10 +51,10 @@ curl -X POST http://localhost:3000/albums \
   -d '{
     "name": "{name}",
     "album": "{album}",
-    "release-date": "{release-date}",
-    "album-score": "{album-score}",
-    "global-album-ranking": "{global-album-ranking}",
-    "band-catalog-album-ranking": "{band-catalog-album-ranking}"
+    "release-date": {release-date},
+    "album-score": {album-score},
+    "global-album-ranking": {global-album-ranking},
+    "band-catalog-album-ranking": {band-catalog-album-ranking}
   }'
 ```
 
@@ -64,10 +64,10 @@ curl -X POST http://localhost:3000/albums \
 | ------------- | ----------- | ----------- |
 | `name` | string | The name of the band that created the album |
 | `album` | string | The name of the album |
-| `release date` | string | The release date of the album |
-| `album score` | string | The score rating of the album |
-| `global album ranking` | string | The global ranking of the album |
-| `band catalog album ranking` | string | The ranking of the album within the band's catalog |
+| `release-date` | integer | The release year of the album |
+| `album-score` | integer | The score rating of the album |
+| `global-album-ranking` | integer | The global ranking of the album |
+| `band-catalog-album-ranking` | integer | The ranking of the album within the band's catalog |
 | `id` | integer | Unique identifier assigned by the server |
 
 ### Request example
@@ -78,10 +78,10 @@ curl -X POST http://localhost:3000/albums \
   -d '{
     "name": "Soundgarden",
     "album": "Superunknown",
-    "release-date": "1994",
-    "album-score": "945",
-    "global-album-ranking": "5",
-    "band-catalog-album-ranking": "1"
+    "release-date": 1994,
+    "album-score": 945,
+    "global-album-ranking": 5,
+    "band-catalog-album-ranking": 1
   }'
 ```
 
@@ -91,10 +91,10 @@ curl -X POST http://localhost:3000/albums \
 {
   "name": "Soundgarden",
   "album": "Superunknown",
-  "release date": "1994",
-  "album score": "945",
-  "global album ranking": "5",
-  "band catalog album ranking": "1",
+  "release-date": 1994,
+  "album-score": 945,
+  "global-album-ranking": 5,
+  "band-catalog-album-ranking": 1,
   "id": 5
 }
 ```

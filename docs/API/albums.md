@@ -20,49 +20,50 @@ last_updated: "2025-11-14"
 Base endpoint:
 
 ```shell
-
 {server_url}/albums
 ```
 
-Contains information about the albums in the rock-rankers service.
+Provides information about albums in the Rock Rankers service.
 
-The album resource cotains music albums released by [bands](../API/bands.md). Each album links with it's band through the `name` field. The `name` field references the band's name. Rock-rankers ranks albums both globally and within their band's catalog. [Users](../API/users.md) can search for albums and their rankings within the service.
+The album resource contains music albums released by the [bands resource](./bands.md). Each album links with its band through the `name` field. The `name` field references the band's name.
+
+ Rock Rankers ranks albums both globally and within their band's catalog. [Users](./users.md) can search for albums and their rankings within the service.
 
 ## Resource properties
 
 Sample `albums` resource
 
 ```js
-
 {
     "name": "The Beatles",
     "album": "Rubber Soul",
-    "release-date": "1965",
-    "album-score": "987",
-    "global-album-ranking": "1",
-    "band-catalog-album-ranking": "1",
+    "release-date": 1965,
+    "album-score": 987,
+    "global-album-ranking": 1,
+    "band-catalog-album-ranking": 1,
     "id": 1
 }
 ```
 
 | Property name | Type | Description |
 | ------------- | ----------- | ----------- |
-| `name` | string | The name of the [band](../API/bands.md) that released this album |
+| `name` | string | The name of the [bands resource](./bands.md) that released this album |
 | `album` | string | The album name |
-| `release-date` | string | The album release date |
-| `album-score` | string | The album's score |
-| `global-album-ranking` | string | The album's ranking across all albums |
-| `band-catalog-album-ranking` | string | The album's ranking within the band's catalog |
-| `id` | number | The album's unique record ID |
+| `release-date` | integer | The album release year |
+| `album-score` | integer | The album's score |
+| `global-album-ranking` | integer | The album's ranking across all albums |
+| `band-catalog-album-ranking` | integer | The album's ranking within the band's catalog |
+| `id` | integer | The album's unique record ID |
 
 ## Supported operations
 
 * `GET`
-* [`POST: create a new album`](../API/post-album.md)
-* `PUT`
-* `PATCH`
+* [`POST`: create a new album](./post-album.md)
+* [`PUT`: update an existing album](./put-album.md)
+* [`PATCH`: partially update an album](./patch-album.md)
+* [`DELETE`: delete an album](./delete-album.md)
 
 ## Related resources
 
-* [Bands resource](../API/bands.md) - The band that released this album
-* [Users resource](../API/users.md) - Users who can view and interact with albums
+* [bands resource](./bands.md) - The band that released this album
+* [users resource](./users.md) - Users who can view and interact with albums
