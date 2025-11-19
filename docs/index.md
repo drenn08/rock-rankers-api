@@ -84,7 +84,7 @@ Rock-rankers supports the following typical `HTTP` functions:
   
 ### View the rock-rankers repo and OpenAPI specification
 
-* [rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
+* [Rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
 * [View OpenAPI Specification](../api/rock-rankers-spec.yml)
 
 ## Troubleshooting
