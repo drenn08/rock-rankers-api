@@ -85,14 +85,14 @@ curl -X PUT "http://localhost:3000/bands/{id}" \
 }
 ```
 
-This example removes the **genre: grunge**.
+This example removes the **genre:** grunge.
 
 ```bash
 curl -X PUT "http://localhost:3000/bands/5" \
   -H "Content-Type: application/json" \
   -d '{
     "name": "Soundgarden",
-    "genre": "rock, alternative",
+    "genre": "rock, alternative, metal",
     "years-active": "1984-1997; 2010-2019",
     "origin": "Seattle, Washington, USA"
   }'
@@ -104,7 +104,7 @@ curl -X PUT "http://localhost:3000/bands/5" \
 {
   "id": 5,
   "name": "Soundgarden",
-  "genre": "rock, alternative",
+  "genre": "rock, alternative, metal",
   "years-active": "1984-1997; 2010-2019",
   "origin": "Seattle, Washington, USA"
 }
