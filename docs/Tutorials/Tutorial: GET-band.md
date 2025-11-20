@@ -1,3 +1,19 @@
+---
+title: "How to retrieve band information"
+layout: default
+nav_order: 1
+parent: "Tutorials"
+has_children: false
+permalink: /Tutorials/Tutorial_GET-band.md/
+has_toc: false
+description: "Tutorial outlinig how to query the `bands` endpoint"
+tags:
+  - api
+categories:
+  - tutorials
+version: "v1.0"
+last_updated: "2025-11-19"
+---
 # Tutorial: how to retrieve band information
 
 In this tutorial, you'll learn
