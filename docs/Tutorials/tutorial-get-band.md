@@ -14,7 +14,7 @@ categories:
 version: "v1.0"
 last_updated: "2025-11-19"
 ---
-# Tutorial: how to retrieve band information
+## Tutorial: how to retrieve band information
 
 In this tutorial, you'll learn
 how to query the rock-rankers
@@ -27,11 +27,11 @@ You'll use the `band` query parameter to:
   
 Expect this tutorial to take about 10 minutes to complete.
 
-## Before you start
+### Before you start
 
 Make sure you've completed the [Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on the development system you'll use for the tutorial.
 
-## Find all bands
+### Find all bands
 
 You use the `GET` method to retrieve `band` information from the `bands` resource.
 
@@ -90,7 +90,7 @@ You use the `GET` method to retrieve `band` information from the `bands` resourc
    ]
 ```
 
-## Find a band by name
+### Find a band by name
 
 Retrieve information for a single band with a `GET` request using the `name` query parameter.
 
@@ -136,7 +136,7 @@ Retrieve information for a single band with a `GET` request using the `name` que
    }
 ```
 
-## What you learned
+### What you learned
 
 After completing this tutorial, you now know how to:
 
@@ -147,7 +147,7 @@ After completing this tutorial, you now know how to:
   using the `name` query
   parameter with curl.
 
-## Next steps
+### Next steps
 
 After doing this tutorial
 using curl, try repeating
