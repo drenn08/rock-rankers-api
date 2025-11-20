@@ -4,7 +4,7 @@ layout: default
 nav_order: 2
 parent: "Tutorials"
 has_children: false
-permalink: /Tutorials/Tutorial_GET-album.md/
+permalink: /Tutorials/tutorial-GET-album/
 has_toc: false
 description: "Tutorial outlining how to query the `albums` endpoint"
 tags:
