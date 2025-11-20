@@ -35,7 +35,7 @@ Make sure you've completed the [Environment set-up tutorial](./rock-rankers%20en
 
 You use the `GET` method to retrieve `band` information from the `bands` resource.
 
-1. Make sure your local service is running, or start it by using this command in the terminal, if it's not.
+1. Make sure your local json server is running, or start it by using this command in the terminal, if it's not.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api
@@ -94,7 +94,7 @@ You use the `GET` method to retrieve `band` information from the `bands` resourc
 
 Retrieve information for a single band with a `GET` request using the `name` query parameter.
 
-1. Make sure your local service is running, or start it by using this command in the terminal, if it's not.
+1. Make sure your local json server is running, or start it by using this command in the terminal, if it's not.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api
