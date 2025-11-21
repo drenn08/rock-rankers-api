@@ -159,6 +159,16 @@ After completing this tutorial, you now know how to:
   using the `album` query
   parameter with curl.
 
+  ## Troubleshooting
+
+| Status Code       | Problem                                        | Solution                                                                 |
+|-------------------|------------------------------------------------|--------------------------------------------------------------------------|
+| 200 OK            | Request successful                             | No action needed; the response contains the album data           |
+| 400 Bad Request   | Invalid query parameter format                 | Check that parameter names are correct, for example, `album` not `album-name`, and values are properly formatted |
+| 404 Not Found     | No albums match the filter criteria             | Verify your album name is correct; check spelling and that space encoding contains `%20`. Try retrieving all albums first to confirm the album exists in the database |
+| 500 Internal Server Error | json-server encountered an error       | Ensure json-server is running; restart it using `json-server --watch api-ranks-db-source.json` |
+| ECONNREFUSED      | Can't connect to json-server                  | Verify json-server is running on port 3000; check that no other service is using the port |
+
 ### Next steps
 
 After doing this tutorial
