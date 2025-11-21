@@ -1,5 +1,5 @@
 ---
-title: "How to filter bands using combined criteria"
+title: "Filtering bands with combined query parameters"
 layout: default
 nav_order: 3
 parent: "Tutorials"
