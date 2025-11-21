@@ -22,13 +22,13 @@ You'll use query parameters to filter bands by both genre and origin.
 
 Expect this tutorial to take about 15 minutes to complete.
 
-### Before you start
+## Before you start
 
 Make sure you've completed the
 [Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on
 the development system you'll use for the tutorial.
 
-### Filter bands by genre and origin
+## Filter bands by genre and origin
 
 You use the `GET` method with the `_like` operator to filter `band` information
 from the `bands` resource. The `_like` operator performs partial text matching,
@@ -120,7 +120,21 @@ After completing this tutorial, you now know how to:
 * Use the `_like` operator to perform partial text matching
 * Combine search criteria to narrow down results from the rock-rankers database
 
-### Next steps
+## Troubleshooting
+
+If you encounter errors while following this tutorial, refer to the following table:
+
+| Status Code       | Problem                                        | Solution                                                                 |
+|-------------------|------------------------------------------------|--------------------------------------------------------------------------|
+| 200 OK            | Request successful                             | No action needed; the response contains the filtered band data           |
+| 400 Bad Request   | Invalid query parameter format                 | Check that parameter names are correct, for example, `genre_like` not `genre-like`, and values are properly formatted |
+| 404 Not Found     | No bands match the filter criteria             | Verify your filter values are correct; try broadening your search criteria or check that your database contains matching records |
+| 500 Internal Server Error | json-server encountered an error       | Ensure json-server is running; restart it using `json-server --watch api-ranks-db-source.json` |
+| ECONNREFUSED      | Can't connect to json-server                  | Verify json-server is running on port 3000; check that no other service is using the port |
+
+## Next steps
+
+## Try more query combinations**
 
 After doing this tutorial using curl, try more query combinations to further
 explore the API, for example:
@@ -154,6 +168,8 @@ curl "http://localhost:3000/bands?genre_like=alternative&genre_like=rock"
 ```shell
 curl "http://localhost:3000/bands?origin_like=London"
 ```
+
+### Try repeating this tutorial using Postman
 
 You can also try repeating these queries using the
 [Postman](https://learning.postman.com/docs/sending-requests/requests/) GUI. To do
