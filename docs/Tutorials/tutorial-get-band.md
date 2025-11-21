@@ -147,6 +147,15 @@ After completing this tutorial, you now know how to:
   using the `name` query
   parameter with curl.
 
+  ## Troubleshooting
+
+| Problem | Solution |
+|---------|----------|
+| **The server returns a connection error** | If you see an error message like `Failed to connect` or `Connection refused`, the json-server might not be running. Start the json-server by running this command in your terminal: `cd <your-github-workspace>/rock-rankers-api/api` followed by `json-server --watch api-ranks-db-source.json`. Verify the server is running by checking for the message `Resources` followed by a list of available endpoints. |
+| **The query returns an empty array** | If your band name query returns `[]`, the band name might be misspelled or formatted incorrectly. Verify you spelled the band name correctly. Ensure you replaced spaces with `%20`. For example: use `Led%20Zeppelin` instead of `Led Zeppelin`. Confirm the band exists in the database by first retrieving all bands. |
+| **The response shows a 404 error** | If you receive a `404 Not Found` error, the endpoint URL might be incorrect. Verify your URL matches this format: `http://localhost:3000/bands`. Check for missing or extra forward slashes, misspelled endpoint names, and wrong port numbers. The default port is 3000. |
+| **The terminal hangs or shows no response** | If the curl command runs but never returns a response, you might have a syntax error in your command. Check that you wrapped URLs containing query parameters in quotation marks. For example: `curl "http://localhost:3000/bands?name=Led%20Zeppelin"` |
+
 ### Next steps
 
 After doing this tutorial
