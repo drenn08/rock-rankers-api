@@ -1,5 +1,5 @@
 ---
-title: "Filtering albums with combined query parameters"
+title: "How to filter albums with combined query parameters"
 layout: default
 nav_order: 4
 parent: "Tutorials"
@@ -14,7 +14,7 @@ categories:
 version: "v1.0"
 last_updated: "2025-11-20"
 ---
-## Tutorial: how to filter albums using combined criteria
+## Tutorial: how to filter albums with combined query parameters
 
 In this tutorial, you'll learn how to query the rock-rankers database to retrieve
 album information from the `/albums` endpoint using a combination of filters. You'll use query parameters to filter albums by both ranking and release

@@ -1,5 +1,5 @@
 ---
-title: "Filtering bands with combined query parameters"
+title: "How to filter bands with combined query parameters"
 layout: default
 nav_order: 3
 parent: "Tutorials"
@@ -14,7 +14,7 @@ categories:
 version: "v1.0"
 last_updated: "2025-11-20"
 ---
-## Tutorial: how to filter bands using combined criteria
+## Tutorial: how to filter bands with combined query parameters
 
 In this tutorial, you'll learn how to query the rock-rankers database to retrieve
 band information from the `/bands` endpoint using a combination of filters.
