@@ -4,7 +4,7 @@ layout: default
 nav_order: 4
 parent: "Tutorials"
 has_children: false
-permalink: /Tutorials/tutorial-get-album-filters.md
+permalink: /Tutorials/tutorial-get-album-filters
 has_toc: false
 description: "Tutorial outlining how to filter the `albums` endpoint using many query parameters"
 tags:
