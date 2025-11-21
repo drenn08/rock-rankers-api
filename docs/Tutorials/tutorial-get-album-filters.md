@@ -1,5 +1,5 @@
 ---
-title: "How to filter albums using combined criteria"
+title: "Filtering albums with combined query parameters"
 layout: default
 nav_order: 4
 parent: "Tutorials"
