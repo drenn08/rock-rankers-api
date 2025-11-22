@@ -1,12 +1,12 @@
 ---
-title: "PATCH: partially update a band"
+title: "`PATCH`: partially update a band"
 layout: default
 nav_order: 3
 parent: "Bands Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/bands/patch-band/
 has_toc: false
-description: "Partially update a band using the PATCH method"
+description: "Partially update a band using the `PATCH` method"
 tags:
   - api
 categories:

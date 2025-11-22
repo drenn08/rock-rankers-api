@@ -1,12 +1,12 @@
 ---
-title: "PUT: update an existing album"
+title: "`PUT`: update an existing album"
 layout: default
 nav_order: 2
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/albums/put-album/
 has_toc: false
-description: "Update an existing album using the PUT method"
+description: "Update an existing album using the `PUT` method"
 tags:
   - api
 categories:

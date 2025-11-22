@@ -1,12 +1,12 @@
 ---
-title: "PUT: update an existing band"
+title: "`PUT`: update an existing band"
 layout: default
 nav_order: 2
 parent: "Bands Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/bands/put-band/
 has_toc: false
-description: "Update an existing band using the PUT method"
+description: "Update an existing band using the `PUT` method"
 tags:
   - api
 categories:
