@@ -1,12 +1,12 @@
 ---
-title: "DELETE: delete a band"
+title: "`DELETE`: delete a band"
 layout: default
 nav_order: 4
 parent: "Bands Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/bands/delete-band/
 has_toc: false
-description: "Delete a band using the DELETE method"
+description: "Delete a band using the `DELETE` method"
 tags:
   - api
 categories:

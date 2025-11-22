@@ -1,12 +1,12 @@
 ---
-title: "POST: create a new album"
+title: "`POST`: create a new album"
 layout: default
 nav_order: 1
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/albums/post-album/
 has_toc: false
-description: "Create a new album using the POST method"
+description: "Create a new album using the `POST` method"
 tags:
   - api
 categories:

@@ -1,12 +1,12 @@
 ---
-title: "DELETE: delete a user"
+title: "`DELETE`: delete a user"
 layout: default
 nav_order: 4
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/users/delete-user/
 has_toc: false
-description: "Delete a user using the DELETE method"
+description: "Delete a user using the `DELETE` method"
 tags:
   - api
 categories:

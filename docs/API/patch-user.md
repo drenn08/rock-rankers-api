@@ -1,12 +1,12 @@
 ---
-title: "PATCH: partially update a user"
+title: "`PATCH`: partially update a user"
 layout: default
 nav_order: 3
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/users/patch-user/
 has_toc: false
-description: "Partially update a user using the PATCH method"
+description: "Partially update a user using the `PATCH` method"
 tags:
   - api
 categories:
