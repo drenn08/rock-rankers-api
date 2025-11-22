@@ -23,11 +23,7 @@ Rock-rankers is for developers building streaming apps and sites for rock fans w
 
 ## See rock-rankers in action
 
-Placeholder, Add a sample rock rakers query and response.
-
-### Note
-
-The Rock Rankers API is an educational project demonstrating REST API documentation for managing rock music rankings. It runs locally via JSON Server. See [Getting Started](./Tutorials/rock-rankers%20environment%20set-up.md) for setup.
+**chechout the power of rock rankers**
 
 ## Get started
 

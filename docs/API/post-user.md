@@ -1,12 +1,12 @@
 ---
-title: "POST: create a new user"
+title: "`POST`: create a new user"
 layout: default
 nav_order: 1
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/users/post-user/
 has_toc: false
-description: "Create a new user using the POST method"
+description: "Create a new user using the `POST` method"
 tags:
   - api
 categories:

@@ -1,12 +1,12 @@
 ---
-title: "PATCH: partially update an album"
+title: "`PATCH`: partially update an album"
 layout: default
 nav_order: 3
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/albums/patch-album/
 has_toc: false
-description: "Partially update an album using the PATCH method"
+description: "Partially update an album using the `PATCH` method"
 tags:
   - api
 categories:

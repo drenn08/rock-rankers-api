@@ -1,12 +1,12 @@
 ---
-title: "DELETE: delete an album"
+title: "`DELETE`: delete an album"
 layout: default
 nav_order: 4
 parent: "Albums Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/albums/delete-album/
 has_toc: false
-description: "Delete an album using the DELETE method"
+description: "Delete an album using the `DELETE` method"
 tags:
   - api
 categories:

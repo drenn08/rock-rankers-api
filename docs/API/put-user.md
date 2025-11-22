@@ -1,12 +1,12 @@
 ---
-title: "PUT: update an existing user"
+title: "`PUT`: update an existing user"
 layout: default
 nav_order: 2
 parent: "Users Resource"
 grand_parent: "API Reference Docs"
 permalink: /api-reference-docs/users/put-user/
 has_toc: false
-description: "Update an existing user using the PUT method"
+description: "Update an existing user using the `PUT` method"
 tags:
   - api
 categories:
