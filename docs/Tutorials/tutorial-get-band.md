@@ -147,6 +147,14 @@ After completing this tutorial, you now know how to:
   using the `name` query
   parameter with curl.
 
+ | Status Code       | Problem                                        | Solution                                                                 |
+|-------------------|------------------------------------------------|--------------------------------------------------------------------------|
+| 200 OK            | Request successful                             | No action needed; the response contains the band data           |
+| 400 Bad Request   | Invalid query parameter format                 | Check that parameter names are correct, for example, `name` not `band-name`, and verify values are properly formatted |
+| 404 Not Found     | No bands match the filter criteria             | Verify your band name is correct; check spelling and ensure you encoded spaces as `%20`. Try retrieving all bands first to confirm the band exists in the database |
+| 500 Internal Server Error | json-server encountered an error       | Ensure json-server is running; restart it using `json-server --watch api-ranks-db-source.json` |
+| ECONNREFUSED      | Can't connect to json-server                  | Verify json-server is running on port 3000; check that no other service is using the port |
+
 ### Next steps
 
 After doing this tutorial

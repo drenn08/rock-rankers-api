@@ -35,6 +35,10 @@ Follow this tutorial to learn how to do a one-time setup of your rock-rankers en
 
 Learn how to perform common rock-rankers tasks:
 
+* [How to retrieve band information](./Tutorials/tutorial-get-band.md)
+* [How to retrieve album information](./Tutorials/tutorial-get-album.md)
+* [How to filter bands with combined query parameters](./Tutorials/tutorial-get-band-filters.md)
+* [How to filter albums with combined query parameters](./Tutorials/tutorial-get-album-filters.md)
 * [query the rock-rankers database](./Tutorials/query%20the%20rock-rankers%20database.md)
 * [add a new band](./Tutorials/add%20a%20new%20band.md)
 * [add a new album](./Tutorials/add%20a%20new%20album.md)
@@ -89,10 +93,6 @@ Rock-rankers supports the following typical `HTTP` functions:
 * [Rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
 * [View OpenAPI Specification](https://raw.githubusercontent.com/GillWrites/rock-rankers-api/main/api/rock-rankers-spec.yml)
 
-## Troubleshooting
-
-Placeholder for a troubleshootig
-
 ## Contact rock-rankers
 
-Placeholder for contact.
+Ready for an epic music adventure? Rock-rankers would love to hear from you: hello&rockrankers.com.
