@@ -14,9 +14,9 @@ last_updated: "2025-11-22"
 ---
 ## Educational disclaimer
 
-The Rock Rankers API is a made-up project for learning. @drenn08 is the project subject
-matter expert. @GillWrites is the technical writer. The course was a University of
-Washington course about API documentation.
+The Rock Rankers API is a made-up project for learning with the University of Washington,
+specializing in API documentation. @drenn08 is the project subject matter expert.
+@GillWrites is the technical writer.
 
 This API shows how to use REST calls to manage rock music rankings. The Rock Rankers
 service runs on a local JSON server. See [Getting Started](./Tutorials/rock-rankers%20environment%20set-up.md) for setup instructions.
