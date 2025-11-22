@@ -15,4 +15,4 @@ last_updated: "2025-12-11"
 
 ## Contact rock-rankers
 
-* placeholder for contact rock-rankers.
+Ready for an epic music adventure? Rock-rankers would love to hear from you: hello&rockrankers.com.
