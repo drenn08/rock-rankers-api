@@ -8,16 +8,14 @@ nav_order: 1
 # tags used by AI files
 description: Describes how to configure your local computer to run a local instance of
  rock-rankers-api
+ permalink:/get-started/rock-rankers-environment-set-up/
 tags: 
     - get-started
 categories: 
-    - tutorial
+    - tutorials
 ai_relevance: high
 importance: 9
 prerequisites: []
-related_pages: 
-    - /tutorials/add-a-new-task
-    - /tutorials/enroll-a-new-user]
 examples: []
 api_endpoints: []
 version: "v1.0"
