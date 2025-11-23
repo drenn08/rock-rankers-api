@@ -6,7 +6,8 @@ parent: "Get Started Tutorial"
 layout: default
 nav_order: 1
 # tags used by AI files
-description: Describes how to configure your local computer to run a local instance of rock-rankers-api
+description: Describes how to configure your local computer to run a local instance of
+ rock-rankers-api
 tags: 
     - get-started
 categories: 
@@ -29,76 +30,74 @@ last_updated: "2025-11-22"
 
 ## Tutorial: Rock-rankers environment set-up
 
-### Set-up your rock-rankers environment
+### Install software
 
-Following these steps prepare's your development systems for a smooth rock-rakers-api experience.
+Following these steps prepares your development system for a smooth rock-rankers-api
+experience.
 
 Expect this preparation to take about 40 minutes to complete.
 
 1. **Check prerequisites**
 
-   * Verify system compatibility. Rock-rankers runs on any development system running a current version of the Windows, MacOS, or Linux operating system.
+   * Verify system compatibility. Rock-rankers runs on any development system running a
+   current version of the Windows, MacOS, or Linux operating system.
   
 2. **Create a GitHub account**
-      * Create a [GitHub cloud account](https://github.com)
+      * Create a [GitHub cloud account](https://github.com).
   
 3. **Create a fork of the rock-rankers-api repository**
-     * Browse to the [rock-rakers-api repository](https://github.com/GillWrites/rock-rankers-api).
-     * Create a fork of the rock-rankers repository within your GitHub account. This article tells you how: [Git: fork a repo]( https://docs.github.com/articles/fork-a-repo)
+     * Browse to the
+     [rock-rankers-api repository](https://github.com/GillWrites/rock-rankers-api).
+     * Create a fork of the rock-rankers repository within your GitHub account. This
+     article tells you how: [Git: fork a repo](https://docs.github.com/articles/fork-a-repo).
 
 4. **Install Git command line tools**
-    * [Git, command line](https://docs.github.com/en/get-started/quickstart/set-up-git)
+    * [Git, command line](https://docs.github.com/en/get-started/quickstart/set-up-git).
 
-5. **Create a clone of forked rock-rankers api on GitHub Desktop.**
+5. **Create a clone of forked rock-rankers api on GitHub Desktop**
    * [Install GitHub Desktop](https://desktop.github.com).
-   * Create a clone of GitHub cloud on local GitHub Desktop. This article tells you how [Cloning a GitHub repository](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
+   * Create a clone of GitHub cloud on local GitHub Desktop. This article tells you how:
+   [Cloning a GitHub repository](https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop).
 
 6. **Install node.js**
-      * [A current or LTS version of `node.js`](https://nodejs.org/en/download)
+      * [A current or LTS version of `node.js`](https://nodejs.org/en/download).
 
 7. **Install json server**
-      * Version 0.17.4 of [json-server](https://www.npmjs.com/package/json-server/v/0.17.4)
+      * Version 0.17.4 of [json-server](https://www.npmjs.com/package/json-server/v/0.17.4).
   
 <!-- vale Google.Acronyms = YES -->
 
 ## Verify your development environment
 
-To test your development system:.
+1. To test your development system, browse to your rock-rankers-api repository.
+   * Open a command line and browse to your `GitHub repository workspace`. This is the
+   directory that contains your fork of the `rock-rankers-api` repository.
 
-1. Create and checkout a test branch of your fork of the rock-rakers-api repository.
-   * Open a command line and browse to your `GitHub repository workspace`. This is the directory that contains your fork of
-    the `rock-rankers-api` repository.
-
-    ```shell
+   ```shell
     cd <your GitHub repository workspace>/
-     ```
+   ```
 
-     example:
+**For example:**
 
-         ```shell
+```shell
          cd /Documents/GitHub/GitHubRepos/
-        ```
-
-Type `ls` to verify that you see rock-rankers-api folder returned. The output should include `rock-rankers-api'.
-
- ```shell
-    ls
-    rock-rankers-api
 ```
 
-Browse to the `rock-rankers-api/api' folder and verify you can see the json database. The output should include the`rock-rankers-api.json` database.
+   Type `ls` to verify that you see rock-rankers-api folder returned. The output should
+   include `rock-rankers-api`.
 
- ```shell
- ls 
+   ```shell
+    ls
+    rock-rankers-api
+   ```
+
+1. Browse to the `rock-rankers-api/api` folder and verify you can see the json database.
+The output should include the `rock-rankers-api.json` database.
+
+```shell
+ ls
  api-ranks-db-source.json
-
- ```
-
-The 'rock-rankers-api.json` database contains the rock-rankers resources:
-
-* [`Bands`](../API/bands.md)
-* [`Albums`](../API/albums.md)
-* [`Users`](../API/users.md)
+```
 
 You are now ready to make a test call to the rock-rankers database.
 
@@ -115,12 +114,12 @@ You are now ready to make a test call to the rock-rankers database.
 
 2. Make a test call to the service.
 
-    ```shell
+   ```shell
     curl http://localhost:3000/bands
-    ```
+   ```
 
-If the service is running correctly, you should see a list of bands from the rock-rankers database,
-such as in this example.
+If the service is running correctly, you should see a list of bands from the rock-rankers
+database, such as in this example.
 
 ```json
    [
@@ -162,9 +161,10 @@ such as in this example.
    ]
 ```
 
-You should see the list of users.
-If you receive an error in any step of the procedure, investigate, and correct the error before continuing.
-Some common situations that cause errors include:
+You should see the list of bands.
+
+If you receive an error in any step of the procedure investigate. Correct the error before
+continuing. Some common situations that cause errors include:
 
 1. You mistyped a command.
 2. You aren't in the correct directory.
@@ -173,7 +173,8 @@ Some common situations that cause errors include:
 
 ## Next steps
 
-If you see the list of users from the rock-rakers service, congratulations. You're ready to move onto the next steps on your rock-rakers journey.
+If you see the list of bands from the rock-rankers service, congratulations. You're ready to
+move onto the next steps on your rock-rankers journey.
 
-You can learn how to perform common rock-rankers tasks in
-[Tutorials](../tutorials.md.).
+You can now move on and learn how to perform common rock-rankers tasks in
+[Tutorials](../tutorials.md).
