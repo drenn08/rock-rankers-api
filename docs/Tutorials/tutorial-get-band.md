@@ -93,7 +93,7 @@ Use the `GET` method to retrieve `band` information from the `bands` resource.
 
 Retrieve information for a single band with a `GET` request using the `name` query parameter.
 
-1. Make sure the local json server runs. Start it with this command in the terminal if needed.
+1. Make sure the local json server is running. Start it with this command in the terminal if needed.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api

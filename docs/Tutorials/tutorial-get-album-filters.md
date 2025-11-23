@@ -16,34 +16,32 @@ last_updated: "2025-11-20"
 ---
 ## Tutorial: how to filter albums with combined query parameters
 
-In this tutorial, you'll learn how to query the rock-rankers database to retrieve
-album information from the `/albums` endpoint using a combination of filters. You'll use query parameters to filter albums by both ranking and release
-date range.
+This tutorial shows how to query the rock-rankers database. The tutorial gets album data from
+the `/albums` endpoint. The tutorial uses filters and query parameters. These filters search
+albums by ranking and release date range.
 
-Expect this tutorial to take about 15 minutes to complete.
+This tutorial takes about 15 minutes to complete.
 
-## Before you start
+## Before starting
 
-Make sure you've completed the
-[Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on
-the development system you'll use for the tutorial.
+Complete the [Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on
+the development system before starting this tutorial.
 
 ## Filter albums by ranking and release date
 
-You use the `GET` method with range operators to filter `album` information from
-the `albums` resource. Range operators allow you to search for albums within
-specific numeric ranges, such as date ranges or ranking thresholds.
+The `GET` method uses range operators to filter `album` data from the `albums` resource. Range
+operators allow searches for albums within specific numeric ranges. These ranges include date
+ranges or ranking thresholds.
 
-1. Make sure your local json server is running, or start it by using this command
-   in the terminal, if it's not.
+1. Check that the local json server is running. Start the server with this command in the terminal.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api
    json-server --watch api-ranks-db-source.json
    ```
 
-2. Open a second terminal. Run a `GET` command to the `albums` resource using
-   combined query parameters with range operators.
+2. Open a second terminal. Run a `GET` command to the `albums` resource. Use combined query
+   parameters with range operators.
 
    **Request syntax:**
 
@@ -51,20 +49,19 @@ specific numeric ranges, such as date ranges or ranking thresholds.
    http://localhost:3000/albums?global-album-ranking={ranking}&release-date_gte={start_year}&release-date_lte={end_year}
    ```
 
-   Note: replace {ranking} with the global ranking you want to search for,
-   {start_year} with the beginning of the date range, and {end_year} with the end
-   of the date range. The `_gte` operator means "greater than or equal to" and
-   `_lte` means "less than or equal to."
+   Note: replace {ranking} with the global ranking to search for. Replace {start_year} with
+   the start of the date range. Replace {end_year} with the end of the date range. The `_gte`
+   operator means "greater than or equal to" and `_lte` means "less than or equal to."
 
    **Request example:**  
-   This request queries the rock-rankers database to retrieve information about
-   albums that have a global ranking of 1 and released in the 1960&nbsp;s.
+   This request queries the rock-rankers database. The request gets data about albums that have
+   a global ranking of 1 and released in the 1960&nbsp;s.
 
    ```shell
    curl "http://localhost:3000/albums?global-album-ranking=1&release-date_gte=1960&release-date_lte=1969"
    ```
 
-3. Verify the response returns only albums matching all criteria.
+3. Check the response. The response returns only albums matching all criteria.
 
 ```json
    [
@@ -82,15 +79,15 @@ specific numeric ranges, such as date ranges or ranking thresholds.
 
 ### Understanding range operators
 
-Range operators are useful when working with numeric fields like dates, scores, or
-rankings. In this example:
+Range operators work well with numeric fields like dates, scores, or rankings. In this
+example:
 
 * `global-album-ranking=1` matches albums with an exact ranking of 1
 * `release-date_gte=1960` matches albums released in 1960 or later
 * `release-date_lte=1969` matches albums released in 1969 or earlier
 
-When you combine query parameters with `&`, the API returns only albums that match
-all the specified criteria.
+When query parameters combine with `&`, the API returns only albums that match all the
+specified criteria.
 
 ### Available range operators
 
@@ -103,7 +100,7 @@ json-server supports these range operators for numeric fields:
 
 ### Try different filter combinations
 
-Experiment with other filter combinations to explore the database:
+Try other filter combinations to explore the database:
 
 **Example 1: find albums from the 1990&nbsp;s**
 
@@ -123,9 +120,9 @@ curl "http://localhost:3000/albums?global-album-ranking_lte=5"
 curl "http://localhost:3000/albums?release-date_gte=1995"
 ```
 
-### What you learned
+### What this tutorial covered
 
-After completing this tutorial, you now know how to:
+This tutorial showed how to:
 
 * Filter albums using combined query parameters
 * Use range operators, `_gte`, `_lte`, `_gt`, `_lt`, to filter numeric fields
@@ -133,7 +130,7 @@ After completing this tutorial, you now know how to:
 
 ## Troubleshooting
 
-If you encounter errors while following this tutorial, refer to the following table:
+Refer to the table below if errors occur while following this tutorial:
 
 | Status Code       | Problem                                        | Solution                                                                 |
 |-------------------|------------------------------------------------|--------------------------------------------------------------------------|
@@ -145,10 +142,9 @@ If you encounter errors while following this tutorial, refer to the following ta
 
 ## Next steps
 
-### Try more query combinations**
+### Try more query combinations
 
-After doing this tutorial using curl, try more query combinations to further
-explore the API, for example:
+Try more query combinations with curl to explore the API. Examples follow:
 
 **Find top-ranked albums, with a ranking 1-3, from the 1990&nbsp;s:**
 
@@ -180,9 +176,8 @@ curl "http://localhost:3000/albums?release-date_lte=1970"
 curl "http://localhost:3000/albums?global-album-ranking_lte=2&release-date_gte=1990"
 ```
 
-### Try repeating this tutorial using Postman**
+### Try repeating this tutorial using Postman
 
-You can also try repeating these queries using the
-[Postman](https://learning.postman.com/docs/sending-requests/requests/) GUI. To do
-this, adapt the values from the tutorial to Postman's Params section to make REST
-API calls. You can add many query parameters in Postman's **Params** section.
+Try these queries using the [Postman](https://learning.postman.com/docs/sending-requests/requests/)
+GUI. Adapt the values from the tutorial to Postman's Params section to make REST API calls.
+Postman's **Params** section allows adding many query parameters.

@@ -104,7 +104,7 @@ The `GET` method retrieves `album` information from the `albums` resource.
 
 Retrieve information for a single album with a `GET` request. Use the `album` query parameter.
 
-1. Check that the local json server runs. Start the server with this command in the terminal.
+1. Check that the local json server is running. Start the server with this command in the terminal.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api
