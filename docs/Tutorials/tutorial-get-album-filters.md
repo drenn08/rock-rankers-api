@@ -20,7 +20,7 @@ In this tutorial, you'll learn how to query the rock-rankers database to retriev
 album information from the `/albums` endpoint using a combination of filters. You'll use query parameters to filter albums by both ranking and release
 date range.
 
-Expect this tutorial to take about 15 minutes to complete.
+Expect this tutorial to take about 20 minutes to complete.
 
 ## Before you start
 
