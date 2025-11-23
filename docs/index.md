@@ -90,4 +90,4 @@ Rock-rankers supports the following typical `HTTP` functions:
 
 ## Contact rock-rankers
 
-Ready for an epic music adventure? Rock-rankers would love to hear from you: hello&rockrankers.com.
+Ready for an epic music adventure? Rock-rankers would love to hear from you: hello@rockrankers.com.
