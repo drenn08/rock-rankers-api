@@ -51,7 +51,7 @@ For example, need a reminder of the top album of the sixties? Rock-rankers has y
 
 ## Get started
 
-Follow this tutorial to learn how to do a one-time setup of your rock-rankers environment.  
+Ready to explore more? Follow this tutorial to set up your rock-rankers environment.  
 
 * [rock-rankers environment set-up](./Tutorials/rock-rankers-environment-set-up.md)
 
