@@ -37,19 +37,19 @@ allowing you to search for bands that contain specific text in their fields.
 1. Make sure your local json server is running, or start it by using this command
    in the terminal, if it's not.
 
-   ```shell
+      ```shell
    cd <your-github-workspace>/rock-rankers-api/api
    json-server --watch api-ranks-db-source.json
-   ```
+      ```
 
 2. Open a second terminal. Run a `GET` command to the `bands` resource using
    combined query parameters with the `_like` operator.
 
    **Request syntax:**
 
-   ```shell
+      ```shell
    http://localhost:3000/bands?genre_like={genre}&origin_like={location}
-   ```
+      ```
 
    Note: replace {genre} with the genre you want to search for and {location} with
    the origin location. The `_like` operator matches any band where the search
@@ -59,9 +59,9 @@ allowing you to search for bands that contain specific text in their fields.
    This request queries the rock-rankers database to retrieve information about
    bands that have "rock" in their genre and "California" in their origin.
 
-   ```shell
+      ```shell
    curl "http://localhost:3000/bands?genre_like=rock&origin_like=California"
-   ```
+      ```
 
 3. Verify the response returns only bands matching both criteria.
 
