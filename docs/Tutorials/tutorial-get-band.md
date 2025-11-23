@@ -139,6 +139,8 @@ After completing this tutorial, you now know how to:
 * Retrieve information for all bands in the rock-rankers database.
 * Find bands by name using the `name` query parameter with curl.
 
+## Troubleshooting
+
  | Status Code       | Problem                                        | Solution                                                                 |
 |-------------------|------------------------------------------------|--------------------------------------------------------------------------|
 | 200 OK            | Request successful                             | No action needed; the response contains the band data           |
