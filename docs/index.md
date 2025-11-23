@@ -23,7 +23,31 @@ Rock-rankers is for developers building streaming apps and sites for rock fans w
 
 ## See rock-rankers in action
 
-**chechout the power of rock rankers**
+**Check out the power of rock-rankers**
+
+Filter your favorite bands and albums by release dates, album scores/rankings and much more.
+
+For example, need a reminder of the top album of the sixties? Rock-rankers has you covered:
+
+ ```shell
+   curl "http://localhost:3000/albums?global-album-ranking=1&release-date_gte=1960&release-date_lte=1969"
+   ```
+
+   **Sample response**
+
+```json
+   [
+     {
+       "id": 1,
+       "name": "The Beatles",
+       "album": "Rubber Soul",
+       "release-date": 1965,
+       "album-score": 987,
+       "global-album-ranking": 1,
+       "band-catalog-album-ranking": 1
+     }
+   ]
+```
 
 ## Get started
 
