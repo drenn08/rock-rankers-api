@@ -168,7 +168,7 @@ continuing. Some common situations that cause errors include:
 3. A required software component didn't install correctly.
 4. A required software component isn't up to date.
 
-If you need more help, please email rock-rankers: hello&rockrankers.com
+If you need more help, please email rock-rankers: hello@rockrankers.com
 
 ## Next steps
 
