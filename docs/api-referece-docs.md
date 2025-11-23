@@ -1,6 +1,6 @@
 --- 
 # markdownlint-disable
-# vale off
+# Vale off
 title: "API Reference Docs"
 layout: default
 nav_order: 4
@@ -9,16 +9,19 @@ permalink: /api-reference-docs
 has_toc: false
 version: "v1.0"
 last_updated: "2025-09-03"
-# vale on
+# Vale on
 # markdownlint-enable
 ---
 
 ## API reference docs
 
-Learn more by browsing through the rock-rankers-api **api-reference-docs**.
+### The rock-rankers-api has three main resources. Browse each one below.
 
 * [bands resource](.//API/bands.md)
 * [albums resource](.//API/albums.md)
 * [users resource](.//API/users.md)
+  
+### Browse the rock-rankers-api repo and OpenAPI spec below.
+
 * [rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
-* [OpenAPI Specification](../api/rock-rankers-spec.yml)
+* [OpenAPI Specification](https://raw.githubusercontent.com/GillWrites/rock-rankers-api/main/api/rock-rankers-spec.yml)
