@@ -29,7 +29,7 @@ the development system before starting this tutorial.
 
 ## Filter albums by ranking and release date
 
-The `GET` method uses range operators to filter `album` data from the `albums` resource. Range
+The `GET` method uses range operators to filter album data from the `albums` resource. Range
 operators allow searches for albums within specific numeric ranges. These ranges include date
 ranges or ranking thresholds.
 
@@ -122,7 +122,7 @@ curl "http://localhost:3000/albums?release-date_gte=1995"
 
 ### What this tutorial covered
 
-This tutorial showed how to:
+After completing this tutorial, you now know how to:
 
 * Filter albums using combined query parameters
 * Use range operators, `_gte`, `_lte`, `_gt`, `_lt`, to filter numeric fields

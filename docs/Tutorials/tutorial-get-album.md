@@ -17,7 +17,7 @@ last_updated: "2025-11-19"
 ## Tutorial: how to retrieve album information
 
 This tutorial shows how to query the rock-rankers database to get album information from
-the `/albums` endpoint. The tutorial uses the `album` query parameter to:
+the `/albums` endpoint to:
 
 * Find all albums.
 * Filter albums by album name.

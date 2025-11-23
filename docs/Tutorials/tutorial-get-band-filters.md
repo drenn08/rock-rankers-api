@@ -29,7 +29,7 @@ the development system before starting this tutorial.
 
 ## Filter bands by genre and origin
 
-The `GET` method uses the `_like` operator to filter `band` data from the `bands` resource.
+The `GET` method uses the `_like` operator to filter band data from the `bands` resource.
 The `_like` operator does partial text matching. This allows searches for bands that have
 certain text in their fields.
 
@@ -110,7 +110,7 @@ curl "http://localhost:3000/bands?genre_like=metal"
 
 ### What this tutorial covered
 
-This tutorial showed how to:
+After completing this tutorial, you now know how to:
 
 * Filter bands using combined query parameters
 * Use the `_like` operator to do partial text matching

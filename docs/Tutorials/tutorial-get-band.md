@@ -17,7 +17,7 @@ last_updated: "2025-11-19"
 ## Tutorial: how to retrieve band information
 
 This tutorial explains how to query the rock-rankers database to retrieve band information from
-the `/bands` endpoint. The tutorial covers how to use the `band` query parameter to:
+the `/bands` endpoint to:
 
 * Find all bands.
 * Filter bands by their band name.
@@ -31,7 +31,7 @@ development system before starting this tutorial.
 
 ### Find all bands
 
-Use the `GET` method to retrieve `band` information from the `bands` resource.
+Use the `GET` method to retrieve band information from the `bands` resource.
 
 1. Make sure the local json server is running. Start it with this command in the terminal if needed.
 
