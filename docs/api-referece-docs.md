@@ -15,13 +15,13 @@ last_updated: "2025-09-03"
 
 ## API reference docs
 
-### The rock-rankers-api has three main resources. Browse each one below.
+### The rock-rankers-api has three main resources. Browse each one below
 
 * [bands resource](.//API/bands.md)
 * [albums resource](.//API/albums.md)
 * [users resource](.//API/users.md)
   
-### Browse the rock-rankers-api repo and OpenAPI spec below.
+### Browse the rock-rankers-api repo and OpenAPI spec below
 
 * [rock-rankers api repo](https://github.com/drenn08/rock-rankers-api)
 * [OpenAPI Specification](https://raw.githubusercontent.com/GillWrites/rock-rankers-api/main/api/rock-rankers-spec.yml)
