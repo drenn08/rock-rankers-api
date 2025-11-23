@@ -38,7 +38,6 @@ experience.
 Expect this preparation to take about 40 minutes to complete.
 
 1. **Check prerequisites**
-
    * Verify system compatibility. Rock-rankers runs on any development system running a
    current version of the Windows, MacOS, or Linux operating system.
   
