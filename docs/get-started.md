@@ -1,7 +1,7 @@
 ---
 # markdownlint-disable
 # vale off
-title: "Get Started"
+title: "Get Started Tutorial"
 layout: default
 nav_order: 2
 has_children: true
