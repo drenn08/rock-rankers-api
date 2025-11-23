@@ -16,34 +16,32 @@ last_updated: "2025-11-20"
 ---
 ## Tutorial: how to filter bands with combined query parameters
 
-In this tutorial, you'll learn how to query the rock-rankers database to retrieve
-band information from the `/bands` endpoint using a combination of filters.
-You'll use query parameters to filter bands by both genre and origin.
+This tutorial shows how to query the rock-rankers database. The tutorial gets band data from
+the `/bands` endpoint. The tutorial uses filters and query parameters. These filters search
+bands by genre and origin.
 
-Expect this tutorial to take about 15 minutes to complete.
+This tutorial takes about 20 minutes to complete.
 
-## Before you start
+## Before starting
 
-Make sure you've completed the
-[Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on
-the development system you'll use for the tutorial.
+Complete the [Environment set-up tutorial](./rock-rankers%20environment%20set-up.md) topic on
+the development system before starting this tutorial.
 
 ## Filter bands by genre and origin
 
-You use the `GET` method with the `_like` operator to filter `band` information
-from the `bands` resource. The `_like` operator performs partial text matching,
-allowing you to search for bands that contain specific text in their fields.
+The `GET` method uses the `_like` operator to filter band data from the `bands` resource.
+The `_like` operator does partial text matching. This allows searches for bands that have
+certain text in their fields.
 
-1. Make sure your local json server is running, or start it by using this command
-   in the terminal, if it's not.
+1. Check that the local json server is running. Start the server with this command in the terminal.
 
    ```shell
    cd <your-github-workspace>/rock-rankers-api/api
    json-server --watch api-ranks-db-source.json
    ```
 
-2. Open a second terminal. Run a `GET` command to the `bands` resource using
-   combined query parameters with the `_like` operator.
+2. Open a second terminal. Run a `GET` command to the `bands` resource. Use combined query
+   parameters with the `_like` operator.
 
    **Request syntax:**
 
@@ -51,19 +49,19 @@ allowing you to search for bands that contain specific text in their fields.
    http://localhost:3000/bands?genre_like={genre}&origin_like={location}
    ```
 
-   Note: replace {genre} with the genre you want to search for and {location} with
-   the origin location. The `_like` operator matches any band where the search
-   text appears anywhere in the field.
+   Note: replace {genre} with the genre to search for. Replace {location} with the origin
+   location. The `_like` operator matches any band where the search text appears anywhere in
+   the field.
 
    **Request example:**  
-   This request queries the rock-rankers database to retrieve information about
-   bands that have "rock" in their genre and "California" in their origin.
+   This request queries the rock-rankers database. The request gets data about bands that have
+   "rock" in their genre and "California" in their origin.
 
-   ```shell
+      ```shell
    curl "http://localhost:3000/bands?genre_like=rock&origin_like=California"
-   ```
+      ```
 
-3. Verify the response returns only bands matching both criteria.
+3. Check the response. The response returns only bands matching both filters.
 
 ```json
    [
@@ -79,20 +77,18 @@ allowing you to search for bands that contain specific text in their fields.
 
 ### Understanding the `_like` operator
 
-The `_like` operator is useful when working with fields that contain many values
-or descriptive text. In this example:
+The `_like` operator works well with fields that have many values or long text. In this
+example:
 
-* `genre_like=rock` matches any band where "rock" appears in the genre field, even
-  if the genre also includes other styles like "alternative" or "metal"
-* `origin_like=California` matches any band where "California" appears in the
-  origin field
+* `genre_like=rock` matches any band where "rock" appears in the genre field. This works even
+  if the genre also has other styles like "alternative" or "metal"
+* `origin_like=California` matches any band where "California" appears in the origin field
 
-When you combine query parameters with `&`, the API returns only bands that match
-all the specified criteria.
+When query parameters combine with `&`, the API returns only bands that match all the filters.
 
 ### Try different filter combinations
 
-Experiment with other filter combinations to explore the database:
+Try other filter combinations to explore the database:
 
 **Example 1: find alternative bands from Seattle**
 
@@ -112,17 +108,17 @@ curl "http://localhost:3000/bands?origin_like=England"
 curl "http://localhost:3000/bands?genre_like=metal"
 ```
 
-### What you learned
+### What this tutorial covered
 
 After completing this tutorial, you now know how to:
 
 * Filter bands using combined query parameters
-* Use the `_like` operator to perform partial text matching
-* Combine search criteria to narrow down results from the rock-rankers database
+* Use the `_like` operator to do partial text matching
+* Combine search filters to narrow down results from the rock-rankers database
 
 ## Troubleshooting
 
-If you encounter errors while following this tutorial, refer to the following table:
+Refer to the table below if errors occur while following this tutorial:
 
 | Status Code       | Problem                                        | Solution                                                                 |
 |-------------------|------------------------------------------------|--------------------------------------------------------------------------|
@@ -134,10 +130,9 @@ If you encounter errors while following this tutorial, refer to the following ta
 
 ## Next steps
 
-## Try more query combinations**
+## Try more query combinations
 
-After doing this tutorial using curl, try more query combinations to further
-explore the API, for example:
+Try more query combinations with curl to explore the API. Examples follow:
 
 **Find grunge bands from the USA:**
 
@@ -171,7 +166,6 @@ curl "http://localhost:3000/bands?origin_like=London"
 
 ### Try repeating this tutorial using Postman
 
-You can also try repeating these queries using the
-[Postman](https://learning.postman.com/docs/sending-requests/requests/) GUI. To do
-this, adapt the values from the tutorial to Postman's Params section to make REST
-API calls. You can add many query parameters in Postman's Params section.
+Try these queries using the [Postman](https://learning.postman.com/docs/sending-requests/requests/)
+GUI. Adapt the values from the tutorial to Postman's Params section to make REST API calls.
+Postman's Params section allows adding many query parameters.
