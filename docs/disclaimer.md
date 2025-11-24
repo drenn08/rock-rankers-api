@@ -19,4 +19,4 @@ specializing in API documentation. @drenn08 is the project subject matter expert
 @GillWrites is the technical writer.
 
 This API shows how to use REST calls to manage rock music rankings. The Rock Rankers
-service runs on a local JSON server. See [Getting Started](./Tutorials/rock-rankers%20environment%20set-up.md) for setup instructions.
+service runs on a local JSON server. See [Getting Started](get-started.md) for setup instructions.
